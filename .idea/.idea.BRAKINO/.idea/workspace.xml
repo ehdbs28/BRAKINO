@@ -4,7 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="923e8a7d-99e1-4206-8e1e-dafb90dc1fe1" name="Changes" comment="" />
+    <list default="true" id="923e8a7d-99e1-4206-8e1e-dafb90dc1fe1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/01.Scripts/Core.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/01.Scripts/Manager.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/01.Scripts/Manager/PoolManager.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/01.Scripts/Manager/PoolManager.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/01.Scripts/Utils/Pooling/Pool.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/01.Scripts/Utils/Pooling/Pool.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/01.Scripts/Utils/Pooling/SO.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/01.Scripts/Utils/Pooling/SO/PoolingList.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/01.Scripts/Utils/Pooling/SO/PoolingList.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/01.Scripts/Utils/Singleton.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/01.Scripts/Utils/Singleton/MonoSingleton.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/01.Scripts/Utils/Singleton/MonoSingleton.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.BRAKINO/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BRAKINO/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/00.Scenes/Player.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/00.Scenes/Player.unity" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -100,6 +115,7 @@
       <workItem from="1704122441813" duration="93000" />
       <workItem from="1705143267034" duration="818000" />
       <workItem from="1705148103866" duration="1502000" />
+      <workItem from="1705160977488" duration="2872000" />
     </task>
     <servers />
   </component>
