@@ -5,14 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="923e8a7d-99e1-4206-8e1e-dafb90dc1fe1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/01.Scripts/Player.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/01.Scripts/Player/Player.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/01.Scripts/Player/Player.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/01.Scripts/Player/State.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/01.Scripts/Player/State/PlayerIdleState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/01.Scripts/Player/State/PlayerIdleState.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/01.Scripts/Player/State/PlayerMovementState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/01.Scripts/Player/State/PlayerMovementState.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BRAKINO/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BRAKINO/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/01.Scripts/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scripts/Player/Player.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/01.Scripts/Utils/EntitySystem/Entity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scripts/Utils/EntitySystem/Entity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01.Scripts/Utils/StateController/State.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scripts/Utils/StateController/State.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01.Scripts/Utils/StateController/StateController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scripts/Utils/StateController/StateController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +21,10 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/99.Settings/InputSetting/InputControl.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/99.Settings/InputSetting/InputReader.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -110,7 +114,7 @@
       <workItem from="1705143267034" duration="818000" />
       <workItem from="1705148103866" duration="1502000" />
       <workItem from="1705160977488" duration="3994000" />
-      <workItem from="1705225498953" duration="2430000" />
+      <workItem from="1705225498953" duration="4534000" />
     </task>
     <servers />
   </component>
