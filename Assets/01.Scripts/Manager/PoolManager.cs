@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PoolManager : MonoSingleton<PoolManager>
 {
-    [SerializeField] private PoolingList _poolingList;
+    [SerializeField] private List<PoolingList> _poolingLists;
 
     private Dictionary<string, Pool> _pools;
 
@@ -17,9 +17,12 @@ public class PoolManager : MonoSingleton<PoolManager>
 
     private void CreatePool()
     {
-        foreach (var pair in _poolingList.items)
+        foreach (var poolingList in _poolingLists)
         {
-            _pools.Add(pair.prefab.name, new Pool(pair.prefab, transform, pair.cnt));
+            foreach (var pair in poolingList.items)
+            {
+                _pools.Add(pair.prefab.name, new Pool(pair.prefab, transform, pair.cnt));
+            }
         }
     }
 

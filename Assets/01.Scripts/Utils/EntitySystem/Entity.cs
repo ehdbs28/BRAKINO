@@ -8,34 +8,34 @@ public class Entity : MonoBehaviour
     [SerializeField] private EntityData _data;
     public EntityData Data => _data;
 
-    protected Transform _modelTrm;
+    protected Transform ModelTrm { get; private set; }
 
-    protected Rigidbody _rigidbody;
-    protected Animator _animator;
+    protected CharacterController CharacterControllerCompo { get; private set; }
+    protected Animator AnimatorCompo { get; private set; }
 
-    private StateController _stateController;
+    protected StateController StateController { get; private set; }
 
     public virtual void Awake()
     {
-        _modelTrm = transform.Find("Model");
-        _rigidbody = GetComponent<Rigidbody>();
-        _animator = _modelTrm.GetComponent<Animator>();
+        ModelTrm = transform.Find("Model");
+        CharacterControllerCompo = GetComponent<CharacterController>();
+        AnimatorCompo = ModelTrm.GetComponent<Animator>();
 
-        _stateController = new StateController(this);
+        StateController = new StateController(this);
     }
 
     public virtual void Update()
     {
-        _stateController.UpdateState();
+        StateController.UpdateState();
     }
 
     public void SetVelocity(Vector3 velocity)
     {
-        _rigidbody.velocity = velocity;
+        CharacterControllerCompo.Move(velocity * Time.deltaTime);
     }
 
-    public void AddForce(Vector3 force)
+    public void StopImmediately()
     {
-        _rigidbody.AddForce(force);
+        CharacterControllerCompo.Move(Vector3.zero);
     }
 }

@@ -4,11 +4,13 @@ using UnityEngine;
 
 public abstract class State
 {
-    protected StateController _controller;
+    protected StateController Controller { get; private set; }
+    protected Entity Owner { get; private set; }
     
     public State(StateController controller)
     {
-        _controller = controller;
+        Controller = controller;
+        Owner = Controller.Owner;
     }
     
     public abstract void EnterState();

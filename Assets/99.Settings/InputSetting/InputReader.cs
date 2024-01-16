@@ -8,7 +8,8 @@ public class InputReader : ScriptableObject, InputControl.IPlayerActions
     public delegate void InputEventListener();
     public delegate void InputEventListener<in T>(T value);
 
-    public event InputEventListener<Vector2> OnMovementEvent = null;
+    public Vector2 movementInput;
+    public Vector2 screenPos;
 
     private InputControl _inputControl;
 
@@ -25,7 +26,11 @@ public class InputReader : ScriptableObject, InputControl.IPlayerActions
 
     public void OnMovement(InputAction.CallbackContext context)
     {
-        var val = context.ReadValue<Vector2>();
-        OnMovementEvent?.Invoke(val);
+        movementInput = context.ReadValue<Vector2>();
+    }
+
+    public void OnScreenPos(InputAction.CallbackContext context)
+    {
+        screenPos = context.ReadValue<Vector2>();
     }
 }
