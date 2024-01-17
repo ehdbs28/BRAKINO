@@ -2,29 +2,22 @@ using UnityEngine;
 
 public class PlayerMovementState : PlayerBaseState
 {
-    public PlayerMovementState(StateController controller) : base(controller)
+    public PlayerMovementState(StateController controller, string animationParameter) : base(controller, animationParameter)
     {
-    }
-
-    public override void EnterState()
-    {
-        
     }
 
     public override void UpdateState()
     {
-        base.UpdateState();
         var movementInput = Player.InputReader.movementInput;
+        var dir = new Vector3(movementInput.x, 0, movementInput.y);
+        
         if (movementInput.sqrMagnitude <= 0.05f)
         {
             Controller.ChangeState(typeof(PlayerIdleState));
             return;
         }
         
-        Owner.SetVelocity(new Vector3(movementInput.x, 0, movementInput.y) * Owner.Data.movementSpeed);
-    }
-
-    public override void ExitState()
-    {
+        Player.Rotate(Quaternion.LookRotation(dir));
+        Player.SetVelocity(dir * Player.Data.movementSpeed);
     }
 }

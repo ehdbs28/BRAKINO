@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Entity : MonoBehaviour
@@ -10,8 +7,8 @@ public class Entity : MonoBehaviour
 
     protected Transform ModelTrm { get; private set; }
 
-    protected CharacterController CharacterControllerCompo { get; private set; }
-    protected Animator AnimatorCompo { get; private set; }
+    public CharacterController CharacterControllerCompo { get; private set; }
+    public Animator AnimatorCompo { get; private set; }
 
     protected StateController StateController { get; private set; }
 

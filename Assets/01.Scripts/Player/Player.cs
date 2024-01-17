@@ -8,8 +8,8 @@ public class Player : Entity
     public override void Awake()
     {
         base.Awake();
-        StateController.RegisterState(new PlayerIdleState(StateController));
-        StateController.RegisterState(new PlayerMovementState(StateController));
+        StateController.RegisterState(new PlayerIdleState(StateController, "Idle"));
+        StateController.RegisterState(new PlayerMovementState(StateController, "Movement"));
         StateController.ChangeState(typeof(PlayerIdleState));
     }
 
