@@ -4,7 +4,7 @@ public class Player : Entity
 {
     [SerializeField] private InputReader _inputReader;
     public InputReader InputReader => _inputReader;
-    
+
     public override void Awake()
     {
         base.Awake();
