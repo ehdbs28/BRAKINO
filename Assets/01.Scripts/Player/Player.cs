@@ -16,9 +16,9 @@ public class Player : Entity
         StateController.ChangeState(typeof(PlayerIdleState));
     }
 
-    public void Rotate(Quaternion targetRot)
+    public void Rotate(Quaternion targetRot, float speed = -1)
     {
-        ModelTrm.rotation = Quaternion.Lerp(ModelTrm.rotation, targetRot, Data.rotateSpeed);
+        ModelTrm.rotation = Quaternion.Lerp(ModelTrm.rotation, targetRot, speed < 0 ? Data.rotateSpeed : speed);
     }
 
     public void AnimationEndTrigger()

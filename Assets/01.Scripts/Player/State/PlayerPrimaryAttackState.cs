@@ -5,20 +5,28 @@ public class PlayerPrimaryAttackState : PlayerBaseState
 {
     private int _comboCounter;
     private float _lastAttackTime;
+
+    private Vector3 _attackDir;
     
     private readonly int _comboCounterHash;
+    private readonly LayerMask _groundMask;
 
     private Coroutine _runningRoutine;
     
     public PlayerPrimaryAttackState(StateController controller, string animationParameter) : base(controller, animationParameter)
     {
         _comboCounterHash = Animator.StringToHash("ComboCounter");
+        _groundMask = LayerMask.GetMask("Ground");
         _comboCounter = 0;
     }
 
     public override void EnterState()
     {
         base.EnterState();
+
+        _attackDir = GetAttackDir();
+        Player.Rotate(Quaternion.LookRotation(_attackDir), 1f);
+        
         if (_comboCounter > 2 || Time.time >= _lastAttackTime + Player.PlayerData.comboWindowTime)
         {
             _comboCounter = 0;
@@ -49,11 +57,9 @@ public class PlayerPrimaryAttackState : PlayerBaseState
 
     private IEnumerator AdvanceRoutine(float time)
     {
-        var inputDir = Player.InputReader.movementInput;
-        var advanceDir = inputDir.sqrMagnitude >= 0.05f ? inputDir : Player.ModelTrm.forward;
         var currentAttackMovement = Player.PlayerData.attackAdvances[_comboCounter];
 
-        var force = Quaternion.LookRotation(advanceDir) * currentAttackMovement;
+        var force = Quaternion.LookRotation(_attackDir) * currentAttackMovement;
 
         var currentTime = 0f;
         while (currentTime <= time)
@@ -63,5 +69,24 @@ public class PlayerPrimaryAttackState : PlayerBaseState
             yield return null;
         }
         Player.StopImmediately();
+    }
+
+    private Vector3 GetAttackDir()
+    {
+        var screenPos = Player.InputReader.screenPos;
+        var ray = CameraManager.Instance.MainCam.ScreenPointToRay(screenPos);
+        var rayDistance = CameraManager.Instance.MainCam.farClipPlane;
+        var isHit = Physics.Raycast(ray, out var hit, rayDistance, _groundMask);
+
+        if (isHit)
+        {
+            var attackDir = hit.point - Player.transform.position;
+            attackDir.y = 0;
+            return attackDir.normalized;
+        }
+        else
+        {
+            return Player.transform.forward;
+        }
     }
 }
