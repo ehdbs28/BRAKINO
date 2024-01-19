@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,7 +7,9 @@ public class InputReader : ScriptableObject, InputControl.IPlayerActions
     public delegate void InputEventListener();
     public delegate void InputEventListener<in T>(T value);
 
-    public Vector2 movementInput;
+    public event InputEventListener OnPrimaryAttackEvent = null;
+    
+    public Vector3 movementInput;
     public Vector2 screenPos;
 
     private InputControl _inputControl;
@@ -27,10 +28,20 @@ public class InputReader : ScriptableObject, InputControl.IPlayerActions
     public void OnMovement(InputAction.CallbackContext context)
     {
         movementInput = context.ReadValue<Vector2>();
+        movementInput.z = movementInput.y;
+        movementInput.y = 0;
     }
 
     public void OnScreenPos(InputAction.CallbackContext context)
     {
         screenPos = context.ReadValue<Vector2>();
+    }
+
+    public void OnPrimaryAttack(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            OnPrimaryAttackEvent?.Invoke();
+        }
     }
 }

@@ -5,7 +5,7 @@ public class Entity : MonoBehaviour
     [SerializeField] private EntityData _data;
     public EntityData Data => _data;
 
-    protected Transform ModelTrm { get; private set; }
+    public Transform ModelTrm { get; private set; }
 
     public CharacterController CharacterControllerCompo { get; private set; }
     public Animator AnimatorCompo { get; private set; }

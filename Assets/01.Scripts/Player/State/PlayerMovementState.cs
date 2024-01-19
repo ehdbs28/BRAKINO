@@ -6,18 +6,29 @@ public class PlayerMovementState : PlayerBaseState
     {
     }
 
+    public override void EnterState()
+    {
+        base.EnterState();
+        Player.InputReader.OnPrimaryAttackEvent += PrimaryAttackHandle;
+    }
+
     public override void UpdateState()
     {
-        var movementInput = Player.InputReader.movementInput;
-        var dir = new Vector3(movementInput.x, 0, movementInput.y);
+        var inputDir = Player.InputReader.movementInput;
         
-        if (movementInput.sqrMagnitude <= 0.05f)
+        if (inputDir.sqrMagnitude <= 0.05f)
         {
             Controller.ChangeState(typeof(PlayerIdleState));
             return;
         }
         
-        Player.Rotate(Quaternion.LookRotation(dir));
-        Player.SetVelocity(dir * Player.Data.movementSpeed);
+        Player.Rotate(Quaternion.LookRotation(inputDir));
+        Player.SetVelocity(inputDir * Player.Data.movementSpeed);
+    }
+
+    public override void ExitState()
+    {
+        base.ExitState();
+        Player.InputReader.OnPrimaryAttackEvent -= PrimaryAttackHandle;
     }
 }

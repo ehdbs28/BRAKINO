@@ -5,6 +5,8 @@ public abstract class State
     protected StateController Controller { get; private set; }
     protected Entity Owner { get; private set; }
 
+    protected bool _animationEndTriggerCalled;
+
     private readonly int _animationHash;
     
     public State(StateController controller, string animationParameter)
@@ -16,6 +18,7 @@ public abstract class State
 
     public virtual void EnterState()
     {
+        _animationEndTriggerCalled = false;
         Owner.AnimatorCompo.SetBool(_animationHash, true);
     }
     
@@ -24,5 +27,10 @@ public abstract class State
     public virtual void ExitState()
     {
         Owner.AnimatorCompo.SetBool(_animationHash, false);
+    }
+
+    public virtual void AnimationEndTrigger()
+    {
+        _animationEndTriggerCalled = true;
     }
 }

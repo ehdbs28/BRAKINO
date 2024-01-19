@@ -8,6 +8,7 @@ public class PlayerIdleState : PlayerBaseState
     {
         base.EnterState();
         Owner.StopImmediately();
+        Player.InputReader.OnPrimaryAttackEvent += PrimaryAttackHandle;
     }
 
     public override void UpdateState()
@@ -17,5 +18,11 @@ public class PlayerIdleState : PlayerBaseState
         {
             Controller.ChangeState(typeof(PlayerMovementState));
         }
+    }
+
+    public override void ExitState()
+    {
+        base.ExitState();
+        Player.InputReader.OnPrimaryAttackEvent -= PrimaryAttackHandle;
     }
 }
