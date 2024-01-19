@@ -9,6 +9,7 @@ public class PlayerPrimaryAttackState : PlayerBaseState
     private Vector3 _attackDir;
     
     private readonly int _comboCounterHash;
+    private readonly int _speedCurveHash;
     private readonly LayerMask _groundMask;
 
     private Coroutine _runningRoutine;
@@ -16,6 +17,7 @@ public class PlayerPrimaryAttackState : PlayerBaseState
     public PlayerPrimaryAttackState(StateController controller, string animationParameter) : base(controller, animationParameter)
     {
         _comboCounterHash = Animator.StringToHash("ComboCounter");
+        _speedCurveHash = Animator.StringToHash("SpeedCurve");
         _groundMask = LayerMask.GetMask("Ground");
         _comboCounter = 0;
     }
@@ -42,6 +44,8 @@ public class PlayerPrimaryAttackState : PlayerBaseState
 
     public override void UpdateState()
     {
+        Player.AnimatorCompo.speed = Player.AnimatorCompo.GetFloat(_speedCurveHash);
+
         if (_animationEndTriggerCalled)
         {
             Controller.ChangeState(typeof(PlayerIdleState));

@@ -9,7 +9,7 @@ public class Entity : MonoBehaviour
 
     public CharacterController CharacterControllerCompo { get; private set; }
     public Animator AnimatorCompo { get; private set; }
-
+    
     protected StateController StateController { get; private set; }
 
     public virtual void Awake()
