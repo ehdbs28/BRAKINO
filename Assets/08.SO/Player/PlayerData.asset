@@ -17,7 +17,7 @@ MonoBehaviour:
   rotateSpeed: 0.1
   damage: 10
   comboWindowTime: 0.5
-  attackEndDelay: 0.135
+  attackEndDelay: 0.13
   attackAdvances:
   - {x: 0, y: 0, z: 2}
   - {x: 0, y: 0, z: 2}

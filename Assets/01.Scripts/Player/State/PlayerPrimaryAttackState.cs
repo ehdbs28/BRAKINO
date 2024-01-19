@@ -4,9 +4,7 @@ using UnityEngine;
 public class PlayerPrimaryAttackState : PlayerBaseState
 {
     private int _comboCounter;
-    
     private float _lastAttackTime;
-    private float _animationEndCallTime;
     
     private Vector3 _attackDir;
     
@@ -46,10 +44,7 @@ public class PlayerPrimaryAttackState : PlayerBaseState
     {
         if (_animationEndTriggerCalled)
         {
-            if (Time.time >= _animationEndCallTime + Player.PlayerData.attackEndDelay)
-            {
-                Controller.ChangeState(typeof(PlayerIdleState));
-            }
+            Controller.ChangeState(typeof(PlayerPrimaryAttackEndState));
         }
     }
 
@@ -93,11 +88,5 @@ public class PlayerPrimaryAttackState : PlayerBaseState
         {
             return Player.transform.forward;
         }
-    }
-
-    public override void AnimationEndTrigger()
-    {
-        base.AnimationEndTrigger();
-        _animationEndCallTime = Time.time;
     }
 }
