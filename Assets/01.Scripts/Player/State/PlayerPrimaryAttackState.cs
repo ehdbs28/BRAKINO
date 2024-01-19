@@ -3,9 +3,6 @@ using UnityEngine;
 
 public class PlayerPrimaryAttackState : PlayerBaseState
 {
-    private int _comboCounter;
-    private float _lastAttackTime;
-    
     private Vector3 _attackDir;
     
     private readonly int _comboCounterHash;
@@ -17,7 +14,6 @@ public class PlayerPrimaryAttackState : PlayerBaseState
     {
         _comboCounterHash = Animator.StringToHash("ComboCounter");
         _groundMask = LayerMask.GetMask("Ground");
-        _comboCounter = 0;
     }
 
     public override void EnterState()
@@ -26,12 +22,12 @@ public class PlayerPrimaryAttackState : PlayerBaseState
 
         _attackDir = GetAttackDir();
         Player.Rotate(Quaternion.LookRotation(_attackDir), 1f);
-        
-        if (_comboCounter > 2 || Time.time >= _lastAttackTime + Player.PlayerData.comboWindowTime)
+
+        if (Player.PlayerAttackComboCounter > 2)
         {
-            _comboCounter = 0;
+            Player.PlayerAttackComboCounter = 0;
         }
-        Player.AnimatorCompo.SetFloat(_comboCounterHash, _comboCounter);
+        Player.AnimatorCompo.SetFloat(_comboCounterHash, Player.PlayerAttackComboCounter);
 
         if (_runningRoutine is not null)
         {
@@ -51,13 +47,12 @@ public class PlayerPrimaryAttackState : PlayerBaseState
     public override void ExitState()
     {
         base.ExitState();
-        ++_comboCounter;
-        _lastAttackTime = Time.time;
+        ++Player.PlayerAttackComboCounter;
     }
 
     private IEnumerator AdvanceRoutine(float time)
     {
-        var currentAttackMovement = Player.PlayerData.attackAdvances[_comboCounter];
+        var currentAttackMovement = Player.PlayerData.attackAdvances[Player.PlayerAttackComboCounter];
 
         var force = Quaternion.LookRotation(_attackDir) * currentAttackMovement;
 

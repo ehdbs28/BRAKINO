@@ -6,10 +6,13 @@ public class Player : Entity
     public InputReader InputReader => _inputReader;
 
     public PlayerData PlayerData => (PlayerData)Data;
+    
+    public int PlayerAttackComboCounter { get; set; }
 
     public override void Awake()
     {
         base.Awake();
+        PlayerAttackComboCounter = 0;
         StateController.RegisterState(new PlayerIdleState(StateController, "Idle"));
         StateController.RegisterState(new PlayerMovementState(StateController, "Movement"));
         StateController.RegisterState(new PlayerPrimaryAttackState(StateController, "PrimaryAttack"));

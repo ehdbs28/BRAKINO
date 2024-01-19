@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerPrimaryAttackEndState : PlayerBaseState
 {
     private float _attackEndTime;
-    
+
     public PlayerPrimaryAttackEndState(StateController controller, string animationParameter) : base(controller, animationParameter)
     {
     }
@@ -17,9 +17,10 @@ public class PlayerPrimaryAttackEndState : PlayerBaseState
 
     public override void UpdateState()
     {
-        if (Time.time >= _attackEndTime + Player.PlayerData.attackEndDelay)
+        if (Time.time >= _attackEndTime + Player.PlayerData.comboWindowTime)
         {
             Controller.ChangeState(typeof(PlayerIdleState));
+            Player.PlayerAttackComboCounter = 0;
         }
     }
 
