@@ -18,6 +18,8 @@ MonoBehaviour:
   damage: 10
   comboWindowTime: 0.2
   attackAdvances:
+  - {x: 0, y: 0, z: 1}
+  - {x: 0, y: 0, z: 1}
   - {x: 0, y: 0, z: 2}
-  - {x: 0, y: 0, z: 2}
-  - {x: 0, y: 0, z: 4}
+  rollTime: 0.3
+  rollSpeed: 10
