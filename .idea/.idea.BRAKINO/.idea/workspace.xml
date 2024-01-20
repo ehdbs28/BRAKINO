@@ -5,30 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="923e8a7d-99e1-4206-8e1e-dafb90dc1fe1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/01.Scripts/Player/PlayerAnimationTrigger.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/01.Scripts/Player/PlayerAnimationTrigger.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/01.Scripts/Player/State/PlayerPrimaryAttackState.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/01.Scripts/Player/State/PlayerPrimaryAttackState.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/01.Scripts/Utils/ExtensionMethod.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/01.Scripts/Utils/ExtensionMethod/Vector3ExtensionMethod.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/01.Scripts/Utils/ExtensionMethod/Vector3ExtensionMethod.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/01.Scripts/Player/State/PlayerRollState.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/01.Scripts/Player/State/PlayerRollState.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BRAKINO/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BRAKINO/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/00.Scenes/Player.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/00.Scenes/Player.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/01.Scripts/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scripts/Player/Player.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/01.Scripts/Player/SO/PlayerData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scripts/Player/SO/PlayerData.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/01.Scripts/Player/State/PlayerBaseState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scripts/Player/State/PlayerBaseState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01.Scripts/Player/State/PlayerIdleState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scripts/Player/State/PlayerIdleState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/01.Scripts/Player/State/PlayerMovementState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scripts/Player/State/PlayerMovementState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/01.Scripts/Player/State/PlayerPrimaryAttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scripts/Player/State/PlayerPrimaryAttackState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/01.Scripts/Utils/EntitySystem/Entity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scripts/Utils/EntitySystem/Entity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01.Scripts/Utils/StateController/State.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scripts/Utils/StateController/State.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/05.Animations/Player/PlayerController.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/05.Animations/Player/PlayerController.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/06.Models/Character/AnimationFBX/CharacterSwordAttack1.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/06.Models/Character/AnimationFBX/CharacterSwordAttack1.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/06.Models/Character/AnimationFBX/CharacterSwordAttack2.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/06.Models/Character/AnimationFBX/CharacterSwordAttack2.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/06.Models/Character/AnimationFBX/CharacterSwordAttack3.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/06.Models/Character/AnimationFBX/CharacterSwordAttack3.fbx.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/08.SO/Player/PlayerData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/08.SO/Player/PlayerData.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/99.Settings/InputSetting/InputControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/99.Settings/InputSetting/InputControl.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/99.Settings/InputSetting/InputControl.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/99.Settings/InputSetting/InputControl.inputactions" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/99.Settings/InputSetting/InputReader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/99.Settings/InputSetting/InputReader.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +25,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/dd8d4b498aba4a759da933af8b6fa0af27800/0b/9718b227/Animator.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/99.Settings/InputSetting/InputControl.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/99.Settings/InputSetting/InputReader.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
@@ -103,10 +90,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="46050">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="46050" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -134,7 +121,8 @@
       <workItem from="1705390187213" duration="2645000" />
       <workItem from="1705479077611" duration="1333000" />
       <workItem from="1705564634854" duration="9143000" />
-      <workItem from="1705655242796" duration="1474000" />
+      <workItem from="1705655242796" duration="12127000" />
+      <workItem from="1705751306844" duration="632000" />
     </task>
     <servers />
   </component>
@@ -146,24 +134,5 @@
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/01.Scripts/Player/State/PlayerPrimaryAttackState.cs</url>
-          <line>75</line>
-          <properties documentPath="$PROJECT_DIR$/Assets/01.Scripts/Player/State/PlayerPrimaryAttackState.cs" initialLine="75" containingFunctionPresentation="Method 'PrimaryAttackHandle'">
-            <startOffsets>
-              <option value="2265" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2292" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

@@ -10,6 +10,7 @@ public class PlayerMovementState : PlayerBaseState
     {
         base.EnterState();
         Player.InputReader.OnPrimaryAttackEvent += PrimaryAttackHandle;
+        Player.InputReader.OnRollEvent += RollHandle;
     }
 
     public override void UpdateState()
@@ -23,12 +24,13 @@ public class PlayerMovementState : PlayerBaseState
         }
         
         Player.Rotate(Quaternion.LookRotation(inputDir));
-        Player.SetVelocity(inputDir * Player.Data.movementSpeed);
+        Player.Move(inputDir * Player.Data.movementSpeed);
     }
 
     public override void ExitState()
     {
         base.ExitState();
         Player.InputReader.OnPrimaryAttackEvent -= PrimaryAttackHandle;
+        Player.InputReader.OnRollEvent -= RollHandle;
     }
 }

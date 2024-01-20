@@ -9,6 +9,7 @@ public class PlayerIdleState : PlayerBaseState
         base.EnterState();
         Owner.StopImmediately();
         Player.InputReader.OnPrimaryAttackEvent += PrimaryAttackHandle;
+        Player.InputReader.OnRollEvent += RollHandle;
     }
 
     public override void UpdateState()
@@ -24,5 +25,6 @@ public class PlayerIdleState : PlayerBaseState
     {
         base.ExitState();
         Player.InputReader.OnPrimaryAttackEvent -= PrimaryAttackHandle;
+        Player.InputReader.OnRollEvent -= RollHandle;
     }
 }

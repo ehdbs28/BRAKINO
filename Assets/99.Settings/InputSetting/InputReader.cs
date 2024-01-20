@@ -8,6 +8,7 @@ public class InputReader : ScriptableObject, InputControl.IPlayerActions
     public delegate void InputEventListener<in T>(T value);
 
     public event InputEventListener OnPrimaryAttackEvent = null;
+    public event InputEventListener OnRollEvent = null;
     
     public Vector3 movementInput;
     public Vector2 screenPos;
@@ -42,6 +43,14 @@ public class InputReader : ScriptableObject, InputControl.IPlayerActions
         if (context.performed)
         {
             OnPrimaryAttackEvent?.Invoke();
+        }
+    }
+
+    public void OnRoll(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            OnRollEvent?.Invoke();
         }
     }
 }

@@ -26,7 +26,7 @@ public class Entity : MonoBehaviour
         StateController.UpdateState();
     }
 
-    public void SetVelocity(Vector3 velocity)
+    public void Move(Vector3 velocity)
     {
         CharacterControllerCompo.Move(velocity * Time.deltaTime);
     }

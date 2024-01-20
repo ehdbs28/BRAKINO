@@ -13,6 +13,7 @@ public class PlayerPrimaryAttackEndState : PlayerBaseState
         base.EnterState();
         _attackEndTime = Time.time;
         Player.InputReader.OnPrimaryAttackEvent += PrimaryAttackHandle;
+        Player.InputReader.OnRollEvent += RollHandle;
     }
 
     public override void UpdateState()
@@ -28,5 +29,6 @@ public class PlayerPrimaryAttackEndState : PlayerBaseState
     {
         base.ExitState();
         Player.InputReader.OnPrimaryAttackEvent -= PrimaryAttackHandle;
+        Player.InputReader.OnRollEvent -= RollHandle;
     }
 }

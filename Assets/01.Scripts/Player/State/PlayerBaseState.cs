@@ -8,6 +8,11 @@ public abstract class PlayerBaseState : State
     {
     }
 
+    protected virtual void RollHandle()
+    {
+        Controller.ChangeState(typeof(PlayerRollState));
+    }
+
     protected virtual void PrimaryAttackHandle()
     {
         Controller.ChangeState(typeof(PlayerPrimaryAttackState));

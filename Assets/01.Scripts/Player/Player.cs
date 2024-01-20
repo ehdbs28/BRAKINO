@@ -17,6 +17,7 @@ public class Player : Entity
         StateController.RegisterState(new PlayerMovementState(StateController, "Movement"));
         StateController.RegisterState(new PlayerPrimaryAttackState(StateController, "PrimaryAttack"));
         StateController.RegisterState(new PlayerPrimaryAttackEndState(StateController, "PrimaryAttackEnd"));
+        StateController.RegisterState(new PlayerRollState(StateController, "Roll"));
         StateController.ChangeState(typeof(PlayerIdleState));
     }
 

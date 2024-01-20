@@ -19,6 +19,7 @@ public class PlayerPrimaryAttackState : PlayerBaseState
     public override void EnterState()
     {
         base.EnterState();
+        Player.InputReader.OnRollEvent += RollHandle;
 
         _attackDir = GetAttackDir();
         Player.Rotate(Quaternion.LookRotation(_attackDir), 1f);
@@ -48,6 +49,7 @@ public class PlayerPrimaryAttackState : PlayerBaseState
     {
         base.ExitState();
         ++Player.PlayerAttackComboCounter;
+        Player.InputReader.OnRollEvent -= RollHandle;
     }
 
     private IEnumerator AdvanceRoutine(float time)
@@ -60,7 +62,7 @@ public class PlayerPrimaryAttackState : PlayerBaseState
         while (currentTime <= time)
         {
             currentTime += Time.deltaTime;
-            Player.SetVelocity(force);
+            Player.Move(force);
             yield return null;
         }
         Player.StopImmediately();
