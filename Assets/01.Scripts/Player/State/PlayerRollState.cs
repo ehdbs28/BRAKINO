@@ -14,7 +14,7 @@ public class PlayerRollState : PlayerBaseState
         base.EnterState();
         var inputDir = Player.InputReader.movementInput;
         _rollDirection = inputDir.sqrMagnitude >= 0.05f ? inputDir : Player.transform.forward;
-        Player.Rotate(Quaternion.LookRotation(_rollDirection));
+        Player.Rotate(Quaternion.LookRotation(_rollDirection), 1);
         _rollStartTime = Time.time;
     }
 

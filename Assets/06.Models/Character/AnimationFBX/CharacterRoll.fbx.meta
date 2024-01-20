@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e195d217a5c71468796a06515fdddcb4
+guid: e7943a92f60df4538bf51ac114ce5509
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -41,8 +41,8 @@ ModelImporter:
       name: Roll
       takeName: mixamo.com
       internalID: -203655887218126122
-      firstFrame: 21
-      lastFrame: 71
+      firstFrame: 47
+      lastFrame: 118
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
