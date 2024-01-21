@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6dffebfedeb7f423784d8b52708d1702
+guid: 8f405315fa57d447499bb6e9171d86da
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -23,7 +23,8 @@ ModelImporter:
       might lower retargeting quality:\nNote: Activate translation DOF on avatar
       to improve retargeting quality.\n\t'Neck' is inbetween humanoid transforms
       and has rotation animation that will be discarded.\n\t'LeftShoulder' is inbetween
-      humanoid transforms and has rotation animation that will be discarded.\n"
+      humanoid transforms and has rotation animation that will be discarded.\n\t'RightShoulder'
+      is inbetween humanoid transforms and has rotation animation that will be discarded.\n"
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -41,7 +42,7 @@ ModelImporter:
       takeName: mixamo.com
       internalID: -203655887218126122
       firstFrame: 0
-      lastFrame: 38
+      lastFrame: 42
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
