@@ -27,5 +27,5 @@ MonoBehaviour:
   - {x: 0, y: 0, z: 2.5}
   rollTime: 0.3
   rollSpeed: 10
-  shieldMovementSpeed: 0
+  shieldMovementSpeed: 1.5
   parryingDelayTime: 0

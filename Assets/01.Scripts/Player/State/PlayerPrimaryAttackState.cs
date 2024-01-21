@@ -21,6 +21,8 @@ public class PlayerPrimaryAttackState : PlayerBaseState
     public override void EnterState()
     {
         base.EnterState();
+        Player.OnlyUseBaseAnimatorLayer();
+        
         Player.InputReader.OnRollEvent += RollHandle;
 
         _attackDir = GetAttackDir();

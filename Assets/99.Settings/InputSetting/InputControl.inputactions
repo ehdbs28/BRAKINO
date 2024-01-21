@@ -40,6 +40,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Shield",
+                    "type": "Button",
+                    "id": "1a42e4a0-69de-4cd1-a2ce-4b04163525c1",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -128,6 +137,28 @@
                     "processors": "",
                     "groups": "Keyboard & Mouse",
                     "action": "Roll",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1f4f8c4f-6ae0-45c2-a7d6-1b09de3f6ec5",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard & Mouse",
+                    "action": "Shield",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "39cf6085-0535-43db-a4ff-cbd98e129dba",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard & Mouse",
+                    "action": "Shield",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

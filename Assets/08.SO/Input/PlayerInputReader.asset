@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 86ac0e64c9e414cf99f727df23ec64aa, type: 3}
-  m_Name: InputReader
+  m_Name: PlayerInputReader
   m_EditorClassIdentifier: 
   movementInput: {x: 0, y: 0}

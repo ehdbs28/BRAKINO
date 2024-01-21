@@ -17,4 +17,9 @@ public abstract class PlayerBaseState : State
     {
         Controller.ChangeState(typeof(PlayerPrimaryAttackState));
     }
+
+    protected virtual void ShieldHandle(bool value)
+    {
+        Player.ActivateShield(value);
+    }
 }

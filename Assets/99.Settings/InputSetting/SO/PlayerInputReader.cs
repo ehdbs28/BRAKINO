@@ -1,29 +1,26 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-[CreateAssetMenu(menuName = "SO/InputReader")]
-public class InputReader : ScriptableObject, InputControl.IPlayerActions
+[CreateAssetMenu(menuName = "SO/PlayerInputReader")]
+public class PlayerInputReader : InputReader, InputControl.IPlayerActions
 {
-    public delegate void InputEventListener();
-    public delegate void InputEventListener<in T>(T value);
-
     public event InputEventListener OnPrimaryAttackEvent = null;
     public event InputEventListener OnRollEvent = null;
+    public event InputEventListener<bool> OnShieldEvent = null;
     
-    public Vector3 movementInput;
-    public Vector2 screenPos;
-
-    private InputControl _inputControl;
-
-    private void OnEnable()
+    [HideInInspector] public Vector3 movementInput;
+    [HideInInspector] public Vector2 screenPos;
+    
+    protected override void OnEnable()
     {
-        if (_inputControl is null)
-        {
-            _inputControl = new InputControl();
-            _inputControl.Player.SetCallbacks(this);
-        }
-        
-        _inputControl.Player.Enable();
+        base.OnEnable();
+        InputControl.Player.Enable();
+    }
+
+    protected override void CreateNewInputAsset()
+    {
+        base.CreateNewInputAsset();
+        InputControl.Player.SetCallbacks(this);
     }
 
     public void OnMovement(InputAction.CallbackContext context)
@@ -51,6 +48,18 @@ public class InputReader : ScriptableObject, InputControl.IPlayerActions
         if (context.performed)
         {
             OnRollEvent?.Invoke();
+        }
+    }
+
+    public void OnShield(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            OnShieldEvent?.Invoke(true);
+        }
+        else if (context.canceled)
+        {
+            OnShieldEvent?.Invoke(false);
         }
     }
 }

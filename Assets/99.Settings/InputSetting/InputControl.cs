@@ -62,6 +62,15 @@ public partial class @InputControl: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Shield"",
+                    ""type"": ""Button"",
+                    ""id"": ""1a42e4a0-69de-4cd1-a2ce-4b04163525c1"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -152,6 +161,28 @@ public partial class @InputControl: IInputActionCollection2, IDisposable
                     ""action"": ""Roll"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1f4f8c4f-6ae0-45c2-a7d6-1b09de3f6ec5"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard & Mouse"",
+                    ""action"": ""Shield"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""39cf6085-0535-43db-a4ff-cbd98e129dba"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard & Mouse"",
+                    ""action"": ""Shield"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -181,6 +212,7 @@ public partial class @InputControl: IInputActionCollection2, IDisposable
         m_Player_ScreenPos = m_Player.FindAction("ScreenPos", throwIfNotFound: true);
         m_Player_PrimaryAttack = m_Player.FindAction("PrimaryAttack", throwIfNotFound: true);
         m_Player_Roll = m_Player.FindAction("Roll", throwIfNotFound: true);
+        m_Player_Shield = m_Player.FindAction("Shield", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -246,6 +278,7 @@ public partial class @InputControl: IInputActionCollection2, IDisposable
     private readonly InputAction m_Player_ScreenPos;
     private readonly InputAction m_Player_PrimaryAttack;
     private readonly InputAction m_Player_Roll;
+    private readonly InputAction m_Player_Shield;
     public struct PlayerActions
     {
         private @InputControl m_Wrapper;
@@ -254,6 +287,7 @@ public partial class @InputControl: IInputActionCollection2, IDisposable
         public InputAction @ScreenPos => m_Wrapper.m_Player_ScreenPos;
         public InputAction @PrimaryAttack => m_Wrapper.m_Player_PrimaryAttack;
         public InputAction @Roll => m_Wrapper.m_Player_Roll;
+        public InputAction @Shield => m_Wrapper.m_Player_Shield;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -275,6 +309,9 @@ public partial class @InputControl: IInputActionCollection2, IDisposable
             @Roll.started += instance.OnRoll;
             @Roll.performed += instance.OnRoll;
             @Roll.canceled += instance.OnRoll;
+            @Shield.started += instance.OnShield;
+            @Shield.performed += instance.OnShield;
+            @Shield.canceled += instance.OnShield;
         }
 
         private void UnregisterCallbacks(IPlayerActions instance)
@@ -291,6 +328,9 @@ public partial class @InputControl: IInputActionCollection2, IDisposable
             @Roll.started -= instance.OnRoll;
             @Roll.performed -= instance.OnRoll;
             @Roll.canceled -= instance.OnRoll;
+            @Shield.started -= instance.OnShield;
+            @Shield.performed -= instance.OnShield;
+            @Shield.canceled -= instance.OnShield;
         }
 
         public void RemoveCallbacks(IPlayerActions instance)
@@ -323,5 +363,6 @@ public partial class @InputControl: IInputActionCollection2, IDisposable
         void OnScreenPos(InputAction.CallbackContext context);
         void OnPrimaryAttack(InputAction.CallbackContext context);
         void OnRoll(InputAction.CallbackContext context);
+        void OnShield(InputAction.CallbackContext context);
     }
 }
