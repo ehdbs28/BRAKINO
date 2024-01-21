@@ -31,4 +31,10 @@ public class PlayerPrimaryAttackEndState : PlayerBaseState
         Player.InputReader.OnPrimaryAttackEvent -= PrimaryAttackHandle;
         Player.InputReader.OnRollEvent -= RollHandle;
     }
+
+    protected override void RollHandle()
+    {
+        Player.PlayerAttackComboCounter = 0;
+        base.RollHandle();
+    }
 }

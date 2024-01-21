@@ -4,6 +4,8 @@ using UnityEngine;
 public class PlayerPrimaryAttackState : PlayerBaseState
 {
     private Vector3 _attackDir;
+
+    private float _triggerCalledTime;
     
     private readonly int _comboCounterHash;
     private readonly LayerMask _groundMask;
@@ -41,7 +43,10 @@ public class PlayerPrimaryAttackState : PlayerBaseState
     {
         if (_animationEndTriggerCalled)
         {
-            Controller.ChangeState(typeof(PlayerPrimaryAttackEndState));
+            if (Time.time >= _triggerCalledTime + Player.PlayerData.attackDelayTimes[Player.PlayerAttackComboCounter])
+            {
+                Controller.ChangeState(typeof(PlayerPrimaryAttackEndState));
+            }
         }
     }
 
@@ -85,5 +90,11 @@ public class PlayerPrimaryAttackState : PlayerBaseState
         {
             return Player.transform.forward;
         }
+    }
+
+    public override void AnimationEndTrigger()
+    {
+        _triggerCalledTime = Time.time;
+        base.AnimationEndTrigger();
     }
 }

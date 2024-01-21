@@ -17,9 +17,15 @@ MonoBehaviour:
   rotateSpeed: 0.1
   damage: 10
   comboWindowTime: 0.2
+  attackDelayTimes:
+  - 0.05
+  - 0.05
+  - 0.1
   attackAdvances:
-  - {x: 0, y: 0, z: 1}
-  - {x: 0, y: 0, z: 1}
-  - {x: 0, y: 0, z: 2}
+  - {x: 0, y: 0, z: 1.5}
+  - {x: 0, y: 0, z: 1.5}
+  - {x: 0, y: 0, z: 2.5}
   rollTime: 0.3
   rollSpeed: 10
+  shieldMovementSpeed: 0
+  parryingDelayTime: 0
