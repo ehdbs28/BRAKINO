@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="923e8a7d-99e1-4206-8e1e-dafb90dc1fe1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.BRAKINO/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BRAKINO/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/05.Animations/Player/PlayerController.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/05.Animations/Player/PlayerController.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/01.Scripts/Utils/EntitySystem/Entity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scripts/Utils/EntitySystem/Entity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/05.Animations/Player/Clips/CharacterSwordAttack1.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/05.Animations/Player/Clips/CharacterSwordAttack1.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/05.Animations/Player/Clips/CharacterSwordAttack2.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/05.Animations/Player/Clips/CharacterSwordAttack2.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/05.Animations/Player/Clips/CharacterSwordAttack3.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/05.Animations/Player/Clips/CharacterSwordAttack3.fbx.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
