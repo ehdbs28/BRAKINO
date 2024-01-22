@@ -5,19 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="923e8a7d-99e1-4206-8e1e-dafb90dc1fe1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/01.Scripts/Player/State/PlayerParryingState.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/01.Scripts/Player/State/PlayerParryingState.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BRAKINO/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BRAKINO/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/00.Scenes/Player.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/00.Scenes/Player.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/01.Scripts/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scripts/Player/Player.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01.Scripts/Player/SO/PlayerData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scripts/Player/SO/PlayerData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01.Scripts/Player/State/PlayerBaseState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scripts/Player/State/PlayerBaseState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01.Scripts/Player/State/PlayerIdleState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scripts/Player/State/PlayerIdleState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01.Scripts/Player/State/PlayerMovementState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scripts/Player/State/PlayerMovementState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01.Scripts/Player/State/PlayerPrimaryAttackEndState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scripts/Player/State/PlayerPrimaryAttackEndState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/05.Animations/Player/Controller/PlayerController.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/05.Animations/Player/Controller/PlayerController.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/99.Settings/InputSetting/InputControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/99.Settings/InputSetting/InputControl.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/99.Settings/InputSetting/InputControl.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/99.Settings/InputSetting/InputControl.inputactions" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/99.Settings/InputSetting/SO/PlayerInputReader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/99.Settings/InputSetting/SO/PlayerInputReader.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/01.Scripts/Player/PlayerAnimationTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scripts/Player/EntityAnimationTrigger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/01.Scripts/Player/PlayerAnimationTrigger.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scripts/Player/EntityAnimationTrigger.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/01.Scripts/Utils/EntitySystem/Entity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scripts/Utils/EntitySystem/Entity.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/06.Models/Enemy/Dummy/TraningDummy.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/06.Models/Enemy/Dummy/TraningDummy.fbx.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

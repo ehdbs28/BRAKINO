@@ -48,11 +48,6 @@ public class Player : Entity
         ModelTrm.rotation = Quaternion.Lerp(ModelTrm.rotation, targetRot, speed < 0 ? Data.rotateSpeed : speed);
     }
 
-    public void AnimationEndTrigger()
-    {
-        StateController.CurrentState.AnimationEndTrigger();
-    }
-
     public void ActivateShield(bool active)
     {
         OnShieldState = active;

@@ -1,6 +1,7 @@
 using UnityEngine;
 
-public class Entity : MonoBehaviour
+[RequireComponent(typeof(CharacterController))]
+public class Entity : PoolableMono
 {
     [SerializeField] private EntityData _data;
     public EntityData Data => _data;
@@ -34,5 +35,14 @@ public class Entity : MonoBehaviour
     public void StopImmediately()
     {
         CharacterControllerCompo.Move(Vector3.zero);
+    }
+    
+    public void AnimationEndTrigger()
+    {
+        StateController.CurrentState.AnimationEndTrigger();
+    }
+
+    public override void OnPop()
+    {
     }
 }
