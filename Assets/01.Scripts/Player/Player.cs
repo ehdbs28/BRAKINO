@@ -30,6 +30,7 @@ public class Player : Entity
         StateController.RegisterState(new PlayerPrimaryAttackState(StateController, "PrimaryAttack"));
         StateController.RegisterState(new PlayerPrimaryAttackEndState(StateController, "PrimaryAttackEnd"));
         StateController.RegisterState(new PlayerRollState(StateController, "Roll"));
+        StateController.RegisterState(new PlayerParryingState(StateController, "Parrying"));
         StateController.ChangeState(typeof(PlayerIdleState));
     }
 

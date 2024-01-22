@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public abstract class PlayerBaseState : State
 {
     protected Player Player => (Player)Owner;
@@ -13,13 +11,15 @@ public abstract class PlayerBaseState : State
         Controller.ChangeState(typeof(PlayerRollState));
     }
 
-    protected virtual void PrimaryAttackHandle()
+    protected virtual void AttackHandle()
     {
-        Controller.ChangeState(typeof(PlayerPrimaryAttackState));
-    }
-
-    protected virtual void ShieldHandle(bool value)
-    {
-        Player.ActivateShield(value);
+        if (Player.OnShieldState)
+        {
+            Controller.ChangeState(typeof(PlayerParryingState));
+        }
+        else
+        {
+            Controller.ChangeState(typeof(PlayerPrimaryAttackState));
+        }
     }
 }

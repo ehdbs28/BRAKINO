@@ -28,4 +28,3 @@ MonoBehaviour:
   rollTime: 0.3
   rollSpeed: 10
   shieldMovementSpeed: 1.5
-  parryingDelayTime: 0

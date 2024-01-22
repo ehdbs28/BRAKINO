@@ -46,7 +46,7 @@ public partial class @InputControl: IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""PrimaryAttack"",
+                    ""name"": ""Attack"",
                     ""type"": ""Button"",
                     ""id"": ""0dd39098-404e-46a6-a1cb-2cf891742ba3"",
                     ""expectedControlType"": ""Button"",
@@ -147,7 +147,7 @@ public partial class @InputControl: IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard & Mouse"",
-                    ""action"": ""PrimaryAttack"",
+                    ""action"": ""Attack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -210,7 +210,7 @@ public partial class @InputControl: IInputActionCollection2, IDisposable
         m_Player = asset.FindActionMap("Player", throwIfNotFound: true);
         m_Player_Movement = m_Player.FindAction("Movement", throwIfNotFound: true);
         m_Player_ScreenPos = m_Player.FindAction("ScreenPos", throwIfNotFound: true);
-        m_Player_PrimaryAttack = m_Player.FindAction("PrimaryAttack", throwIfNotFound: true);
+        m_Player_Attack = m_Player.FindAction("Attack", throwIfNotFound: true);
         m_Player_Roll = m_Player.FindAction("Roll", throwIfNotFound: true);
         m_Player_Shield = m_Player.FindAction("Shield", throwIfNotFound: true);
     }
@@ -276,7 +276,7 @@ public partial class @InputControl: IInputActionCollection2, IDisposable
     private List<IPlayerActions> m_PlayerActionsCallbackInterfaces = new List<IPlayerActions>();
     private readonly InputAction m_Player_Movement;
     private readonly InputAction m_Player_ScreenPos;
-    private readonly InputAction m_Player_PrimaryAttack;
+    private readonly InputAction m_Player_Attack;
     private readonly InputAction m_Player_Roll;
     private readonly InputAction m_Player_Shield;
     public struct PlayerActions
@@ -285,7 +285,7 @@ public partial class @InputControl: IInputActionCollection2, IDisposable
         public PlayerActions(@InputControl wrapper) { m_Wrapper = wrapper; }
         public InputAction @Movement => m_Wrapper.m_Player_Movement;
         public InputAction @ScreenPos => m_Wrapper.m_Player_ScreenPos;
-        public InputAction @PrimaryAttack => m_Wrapper.m_Player_PrimaryAttack;
+        public InputAction @Attack => m_Wrapper.m_Player_Attack;
         public InputAction @Roll => m_Wrapper.m_Player_Roll;
         public InputAction @Shield => m_Wrapper.m_Player_Shield;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
@@ -303,9 +303,9 @@ public partial class @InputControl: IInputActionCollection2, IDisposable
             @ScreenPos.started += instance.OnScreenPos;
             @ScreenPos.performed += instance.OnScreenPos;
             @ScreenPos.canceled += instance.OnScreenPos;
-            @PrimaryAttack.started += instance.OnPrimaryAttack;
-            @PrimaryAttack.performed += instance.OnPrimaryAttack;
-            @PrimaryAttack.canceled += instance.OnPrimaryAttack;
+            @Attack.started += instance.OnAttack;
+            @Attack.performed += instance.OnAttack;
+            @Attack.canceled += instance.OnAttack;
             @Roll.started += instance.OnRoll;
             @Roll.performed += instance.OnRoll;
             @Roll.canceled += instance.OnRoll;
@@ -322,9 +322,9 @@ public partial class @InputControl: IInputActionCollection2, IDisposable
             @ScreenPos.started -= instance.OnScreenPos;
             @ScreenPos.performed -= instance.OnScreenPos;
             @ScreenPos.canceled -= instance.OnScreenPos;
-            @PrimaryAttack.started -= instance.OnPrimaryAttack;
-            @PrimaryAttack.performed -= instance.OnPrimaryAttack;
-            @PrimaryAttack.canceled -= instance.OnPrimaryAttack;
+            @Attack.started -= instance.OnAttack;
+            @Attack.performed -= instance.OnAttack;
+            @Attack.canceled -= instance.OnAttack;
             @Roll.started -= instance.OnRoll;
             @Roll.performed -= instance.OnRoll;
             @Roll.canceled -= instance.OnRoll;
@@ -361,7 +361,7 @@ public partial class @InputControl: IInputActionCollection2, IDisposable
     {
         void OnMovement(InputAction.CallbackContext context);
         void OnScreenPos(InputAction.CallbackContext context);
-        void OnPrimaryAttack(InputAction.CallbackContext context);
+        void OnAttack(InputAction.CallbackContext context);
         void OnRoll(InputAction.CallbackContext context);
         void OnShield(InputAction.CallbackContext context);
     }

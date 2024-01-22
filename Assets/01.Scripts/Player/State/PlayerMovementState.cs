@@ -14,7 +14,7 @@ public class PlayerMovementState : PlayerBaseState
     public override void EnterState()
     {
         base.EnterState();
-        Player.InputReader.OnPrimaryAttackEvent += PrimaryAttackHandle;
+        Player.InputReader.OnAttackEvent += AttackHandle;
         Player.InputReader.OnRollEvent += RollHandle;
         Player.InputReader.OnShieldEvent += Player.ActivateShield;
     }
@@ -44,7 +44,7 @@ public class PlayerMovementState : PlayerBaseState
     public override void ExitState()
     {
         base.ExitState();
-        Player.InputReader.OnPrimaryAttackEvent -= PrimaryAttackHandle;
+        Player.InputReader.OnAttackEvent -= AttackHandle;
         Player.InputReader.OnRollEvent -= RollHandle;
         Player.InputReader.OnShieldEvent -= Player.ActivateShield;
     }

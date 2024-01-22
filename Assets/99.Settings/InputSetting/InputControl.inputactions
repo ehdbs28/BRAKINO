@@ -24,7 +24,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "PrimaryAttack",
+                    "name": "Attack",
                     "type": "Button",
                     "id": "0dd39098-404e-46a6-a1cb-2cf891742ba3",
                     "expectedControlType": "Button",
@@ -125,7 +125,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard & Mouse",
-                    "action": "PrimaryAttack",
+                    "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

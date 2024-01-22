@@ -4,7 +4,7 @@ using UnityEngine.InputSystem;
 [CreateAssetMenu(menuName = "SO/PlayerInputReader")]
 public class PlayerInputReader : InputReader, InputControl.IPlayerActions
 {
-    public event InputEventListener OnPrimaryAttackEvent = null;
+    public event InputEventListener OnAttackEvent = null;
     public event InputEventListener OnRollEvent = null;
     public event InputEventListener<bool> OnShieldEvent = null;
     
@@ -35,11 +35,11 @@ public class PlayerInputReader : InputReader, InputControl.IPlayerActions
         screenPos = context.ReadValue<Vector2>();
     }
 
-    public void OnPrimaryAttack(InputAction.CallbackContext context)
+    public void OnAttack(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
-            OnPrimaryAttackEvent?.Invoke();
+            OnAttackEvent?.Invoke();
         }
     }
 

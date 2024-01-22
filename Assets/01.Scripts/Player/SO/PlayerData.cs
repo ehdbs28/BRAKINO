@@ -14,7 +14,4 @@ public class PlayerData : EntityData
     
     [Header("Player Shield Data")]
     public float shieldMovementSpeed;
-
-    [Header("Player Parrying Data")] 
-    public float parryingDelayTime;
 }

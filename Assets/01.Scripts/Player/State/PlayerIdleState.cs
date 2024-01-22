@@ -11,7 +11,7 @@ public class PlayerIdleState : PlayerBaseState
         Owner.StopImmediately();
         Player.UseAllAnimatorLayer();
         
-        Player.InputReader.OnPrimaryAttackEvent += PrimaryAttackHandle;
+        Player.InputReader.OnAttackEvent += AttackHandle;
         Player.InputReader.OnRollEvent += RollHandle;
         Player.InputReader.OnShieldEvent += Player.ActivateShield;
     }
@@ -28,7 +28,7 @@ public class PlayerIdleState : PlayerBaseState
     public override void ExitState()
     {
         base.ExitState();
-        Player.InputReader.OnPrimaryAttackEvent -= PrimaryAttackHandle;
+        Player.InputReader.OnAttackEvent -= AttackHandle;
         Player.InputReader.OnRollEvent -= RollHandle;
         Player.InputReader.OnShieldEvent -= Player.ActivateShield;
     }
