@@ -53,6 +53,7 @@ public class Pool
 
     public void Push(PoolableMono obj)
     {
+        obj.OnPush();
         obj.gameObject.SetActive(false);
         obj.transform.SetParent(_parent);
         _pools.Push(obj);

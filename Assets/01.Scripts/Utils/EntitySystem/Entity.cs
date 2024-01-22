@@ -1,7 +1,8 @@
+using System;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
-public class Entity : PoolableMono
+public class Entity : PoolableMono, IDamagable
 {
     [SerializeField] private EntityData _data;
     public EntityData Data => _data;
@@ -12,6 +13,12 @@ public class Entity : PoolableMono
     public Animator AnimatorCompo { get; private set; }
     
     protected StateController StateController { get; private set; }
+
+    private float _currentHp;
+    
+    public bool IsDead { get; private set; }
+
+    public event Action OnHitEvent = null;
 
     public virtual void Awake()
     {
@@ -25,6 +32,17 @@ public class Entity : PoolableMono
     public virtual void Update()
     {
         StateController.UpdateState();
+    }
+    
+    public override void OnPop()
+    {
+        IsDead = false;
+        _currentHp = _data.maxHp;
+    }
+
+    public override void OnPush()
+    {
+        OnHitEvent = null;
     }
 
     public void Move(Vector3 velocity)
@@ -42,7 +60,18 @@ public class Entity : PoolableMono
         StateController.CurrentState.AnimationEndTrigger();
     }
 
-    public override void OnPop()
+    public void OnDamage(float damage)
     {
+        _currentHp -= damage;
+        OnHitEvent?.Invoke();
+        if (_currentHp <= 0)
+        {
+            OnDead();
+        }
+    }
+
+    protected virtual void OnDead()
+    {
+        IsDead = true;
     }
 }

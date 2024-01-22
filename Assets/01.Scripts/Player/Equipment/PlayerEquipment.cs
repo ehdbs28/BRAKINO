@@ -7,4 +7,9 @@ public class PlayerEquipment : PoolableMono
     public override void OnPop()
     {
     }
+
+    public override void OnPush()
+    {
+        
+    }
 }
