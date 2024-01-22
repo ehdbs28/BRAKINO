@@ -16,6 +16,9 @@ MonoBehaviour:
   movementSpeed: 5
   rotateSpeed: 0.1
   damage: 10
+  attackRadius: 1
+  attackDistance: 1
+  maxAttackCount: 5
   comboWindowTime: 0.2
   attackDelayTimes:
   - 0.05

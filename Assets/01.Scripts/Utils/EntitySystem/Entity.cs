@@ -23,6 +23,7 @@ public class Entity : PoolableMono, IDamagable
     public virtual void Awake()
     {
         ModelTrm = transform.Find("Model");
+        
         CharacterControllerCompo = GetComponent<CharacterController>();
         AnimatorCompo = ModelTrm.GetComponent<Animator>();
 

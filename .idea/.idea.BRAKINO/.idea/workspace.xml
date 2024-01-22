@@ -5,13 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="923e8a7d-99e1-4206-8e1e-dafb90dc1fe1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/01.Scripts/Interface.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/01.Scripts/Interface/IDamagable.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/01.Scripts/Interface/IDamagable.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BRAKINO/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BRAKINO/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01.Scripts/Enemy/Dummy/Dummy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scripts/Enemy/Dummy/Dummy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/00.Scenes/Player.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/00.Scenes/Player.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/01.Scripts/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scripts/Player/Player.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/01.Scripts/Player/SO/PlayerData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scripts/Player/SO/PlayerData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/01.Scripts/Player/State/PlayerPrimaryAttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scripts/Player/State/PlayerPrimaryAttackState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/01.Scripts/Utils/EntitySystem/Entity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scripts/Utils/EntitySystem/Entity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01.Scripts/Utils/Pooling/PoolableMono.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scripts/Utils/Pooling/PoolableMono.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/01.Scripts/Utils/EntitySystem/SO/EntityData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scripts/Utils/EntitySystem/SO/EntityData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/06.Models/Enemy/Dummy/TraningDummy.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/06.Models/Enemy/Dummy/TraningDummy.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/08.SO/Player/PlayerData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/08.SO/Player/PlayerData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +123,8 @@
       <workItem from="1705655242796" duration="12127000" />
       <workItem from="1705751306844" duration="2787000" />
       <workItem from="1705762503854" duration="598000" />
-      <workItem from="1705935341019" duration="1917000" />
+      <workItem from="1705935341019" duration="2202000" />
+      <workItem from="1705937562809" duration="3809000" />
     </task>
     <servers />
   </component>

@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[CreateAssetMenu(menuName = "SO/EntityData/Base")]
 public class EntityData : ScriptableObject
 {
     [Header("Base Entity Data")]

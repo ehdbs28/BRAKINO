@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class Player : Entity
 {
@@ -11,6 +11,7 @@ public class Player : Entity
     [SerializeField] private float _layerTransitionTime = 0.1f;
     
     [SerializeField] private LayerMask _groundMask;
+    [SerializeField] private LayerMask _enemyMask;
 
     public PlayerData PlayerData => (PlayerData)Data;
 
@@ -122,4 +123,40 @@ public class Player : Entity
             Rotate(lookRotation);
         }
     }
+
+    public List<Entity> GetCanAttackAEntities()
+    {
+        var cols = new Collider[PlayerData.maxAttackCount];
+        var result = new List<Entity>();
+        var center = transform.position + CharacterControllerCompo.center + ModelTrm.forward * PlayerData.attackDistance;
+        var count = Physics.OverlapSphereNonAlloc(center, PlayerData.attackRadius, cols, _enemyMask);
+        
+        for (var i = 0; i < count; i++)
+        {
+            if (cols[i].TryGetComponent<Entity>(out var entity))
+            {
+                result.Add(entity);
+            }
+        }
+
+        return result;
+    }
+    
+#if UNITY_EDITOR
+
+    private void OnDrawGizmos()
+    {
+        if (Data is null)
+        {
+            return;
+        }
+        
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(
+            transform.position + GetComponent<CharacterController>().center + transform.Find("Model").forward * PlayerData.attackDistance,
+            PlayerData.attackRadius
+        );
+    }
+
+#endif
 }

@@ -39,6 +39,8 @@ public class PlayerPrimaryAttackState : PlayerBaseState
             Player.StopCoroutine(_runningRoutine);
         }
         _runningRoutine = Player.StartCoroutine(AdvanceRoutine(0.2f));
+        
+        Attack();
     }
 
     public override void UpdateState()
@@ -57,6 +59,15 @@ public class PlayerPrimaryAttackState : PlayerBaseState
         base.ExitState();
         ++Player.PlayerAttackComboCounter;
         Player.InputReader.OnRollEvent -= RollHandle;
+    }
+
+    private void Attack()
+    {
+        var entities = Player.GetCanAttackAEntities();
+        foreach (var entity in entities)
+        {
+            entity.OnDamage(Player.PlayerData.damage);
+        }
     }
 
     private IEnumerator AdvanceRoutine(float time)

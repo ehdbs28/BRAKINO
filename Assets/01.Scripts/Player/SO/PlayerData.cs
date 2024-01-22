@@ -3,7 +3,10 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "SO/EntityData/PlayerData")]
 public class PlayerData : EntityData
 {
-    [Header("Player Attack Data")]
+    [Header("Player Attack Data")] 
+    public float attackRadius;
+    public float attackDistance;
+    public int maxAttackCount;
     public float comboWindowTime;
     public float[] attackDelayTimes;
     public Vector3[] attackAdvances;
