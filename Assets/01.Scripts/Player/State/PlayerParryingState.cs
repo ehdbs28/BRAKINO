@@ -16,7 +16,7 @@ public class PlayerParryingState : PlayerBaseState
 
     public override void UpdateState()
     {
-        if (_animationEndTriggerCalled)
+        if (_animationTriggerCalled)
         {
             Controller.ChangeState(typeof(PlayerIdleState));
         }

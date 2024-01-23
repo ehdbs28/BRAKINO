@@ -10,8 +10,8 @@ public class EntityAnimationTrigger : MonoBehaviour
         _entity = transform.parent.GetComponent<Entity>();
     }
 
-    public void AnimationEndTrigger()
+    public void AnimationTrigger()
     {
-        _entity.AnimationEndTrigger();
+        _entity.AnimationTrigger();
     }
 }

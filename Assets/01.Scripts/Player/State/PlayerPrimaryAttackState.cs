@@ -45,7 +45,7 @@ public class PlayerPrimaryAttackState : PlayerBaseState
 
     public override void UpdateState()
     {
-        if (_animationEndTriggerCalled)
+        if (_animationTriggerCalled)
         {
             if (Time.time >= _triggerCalledTime + Player.PlayerData.attackDelayTimes[Player.PlayerAttackComboCounter])
             {
@@ -105,9 +105,9 @@ public class PlayerPrimaryAttackState : PlayerBaseState
         }
     }
 
-    public override void AnimationEndTrigger()
+    public override void AnimationTrigger()
     {
         _triggerCalledTime = Time.time;
-        base.AnimationEndTrigger();
+        base.AnimationTrigger();
     }
 }

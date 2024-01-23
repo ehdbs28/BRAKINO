@@ -12,7 +12,7 @@ public class DummyHitState : State
 
     public override void UpdateState()
     {
-        if (_animationEndTriggerCalled)
+        if (_animationTriggerCalled)
         {
             Controller.ChangeState(typeof(DummyIdleState));
         }

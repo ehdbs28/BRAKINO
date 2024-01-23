@@ -55,10 +55,10 @@ public class Entity : PoolableMono, IDamagable
     {
         CharacterControllerCompo.Move(Vector3.zero);
     }
-    
-    public void AnimationEndTrigger()
+
+    public void AnimationTrigger()
     {
-        StateController.CurrentState.AnimationEndTrigger();
+        StateController.CurrentState.AnimationTrigger();
     }
 
     public void OnDamage(float damage)
