@@ -24,6 +24,12 @@ public class PlayerMovementState : PlayerBaseState
         var inputDir = Player.InputReader.movementInput;
         MovementDirAnimatorParameterSet(inputDir);
 
+        if (_animationTriggerCalled)
+        {
+            CreateWalkDustTrail();
+            _animationTriggerCalled = false;
+        }
+
         if (inputDir.sqrMagnitude <= 0.05f)
         {
             Controller.ChangeState(typeof(PlayerIdleState));
@@ -47,6 +53,15 @@ public class PlayerMovementState : PlayerBaseState
         Player.InputReader.OnAttackEvent -= AttackHandle;
         Player.InputReader.OnRollEvent -= RollHandle;
         Player.InputReader.OnShieldEvent -= Player.ActivateShield;
+    }
+
+    private void CreateWalkDustTrail()
+    {
+        var particle = PoolManager.Instance.Pop("WalkDustParticle") as PoolableParticle;
+        var pos = Player.transform.position;
+        var rot = Quaternion.LookRotation(-Player.ModelTrm.forward + Vector3.up * 0.3f);
+        particle.SetPositionAndRotation(pos, rot);
+        particle.Play();
     }
 
     private void MovementDirAnimatorParameterSet(Vector3 inputDir)

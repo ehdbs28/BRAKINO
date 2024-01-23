@@ -104,7 +104,7 @@ ModelImporter:
       curves: []
       events:
       - time: 1
-        functionName: AnimationEndTrigger
+        functionName: AnimationTrigger
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0

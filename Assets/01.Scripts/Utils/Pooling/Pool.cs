@@ -15,6 +15,8 @@ public class Pool
             Debug.LogError("[Pool] Invalid value exception");
             return;
         }
+
+        _pools = new Stack<PoolableMono>();
         
         _prefab = prefab;
         _parent = parent;
@@ -27,7 +29,7 @@ public class Pool
         for (var i = 0; i < cnt; i++)
         {
             var obj = Object.Instantiate(_prefab, _parent, true);
-            obj.gameObject.name = obj.gameObject.name.Replace("Clone", "");
+            obj.gameObject.name = obj.gameObject.name.Replace("(Clone)", "");
             obj.gameObject.SetActive(false);
             _pools.Push(obj);
         }
