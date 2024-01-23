@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="923e8a7d-99e1-4206-8e1e-dafb90dc1fe1" name="Changes" comment="" />
+    <list default="true" id="923e8a7d-99e1-4206-8e1e-dafb90dc1fe1" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/Assets/01.Scripts/Player/State/PlayerMovementState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scripts/Player/State/PlayerMovementState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02.Prefabs/Particle/WalkDustParticle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02.Prefabs/Particle/WalkDustParticle.prefab" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -114,7 +117,7 @@
       <workItem from="1705762503854" duration="598000" />
       <workItem from="1705935341019" duration="2202000" />
       <workItem from="1705937562809" duration="4178000" />
-      <workItem from="1706020923215" duration="2460000" />
+      <workItem from="1706020923215" duration="3163000" />
     </task>
     <servers />
   </component>

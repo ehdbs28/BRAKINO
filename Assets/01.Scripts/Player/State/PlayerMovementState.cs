@@ -59,7 +59,7 @@ public class PlayerMovementState : PlayerBaseState
     {
         var particle = PoolManager.Instance.Pop("WalkDustParticle") as PoolableParticle;
         var pos = Player.transform.position;
-        var rot = Quaternion.LookRotation(-Player.ModelTrm.forward + Vector3.up * 0.3f);
+        var rot = Quaternion.LookRotation(-Player.ModelTrm.forward + Vector3.up);
         particle.SetPositionAndRotation(pos, rot);
         particle.Play();
     }
