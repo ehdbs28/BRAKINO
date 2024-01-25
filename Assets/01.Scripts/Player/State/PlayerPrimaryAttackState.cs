@@ -11,7 +11,7 @@ public class PlayerPrimaryAttackState : PlayerBaseState
     private readonly LayerMask _groundMask;
 
     private Coroutine _runningRoutine;
-    
+
     public PlayerPrimaryAttackState(StateController controller, string animationParameter) : base(controller, animationParameter)
     {
         _comboCounterHash = Animator.StringToHash("ComboCounter");
