@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerPrimaryAttackState : PlayerBaseState
@@ -47,8 +48,6 @@ public class PlayerPrimaryAttackState : PlayerBaseState
             Player.StopCoroutine(_runningRoutine);
         }
         _runningRoutine = Player.StartCoroutine(AdvanceRoutine(0.2f));
-        
-        Attack();
     }
 
     public override void UpdateState()
@@ -71,11 +70,20 @@ public class PlayerPrimaryAttackState : PlayerBaseState
 
     private void Attack()
     {
-        var entities = Player.GetCanAttackAEntities();
-        foreach (var entity in entities)
+        var entities = Player.GetCanAttackAEntities(out var points);
+        for (var i = 0; i < entities.Count; i++)
         {
-            entity.OnDamage(Player.PlayerData.damage);
+            AttackFeedback(points[i]);
+            entities[i].OnDamage(Player.PlayerData.damage);
         }
+    }
+
+    private void AttackFeedback(Vector3 point)
+    {
+        var hitParticle = PoolManager.Instance.Pop("HitParticle") as PoolableParticle;
+        point += Random.insideUnitSphere * 0.2f;
+        hitParticle.SetPositionAndRotation(point, Quaternion.identity);
+        hitParticle.Play();
     }
 
     private IEnumerator AdvanceRoutine(float time)
@@ -122,6 +130,10 @@ public class PlayerPrimaryAttackState : PlayerBaseState
             _swordTrail.enabled = true;
         }
         else if (_triggerCalledCount == 2)
+        {
+            Attack();
+        }
+        else if (_triggerCalledCount == 3)
         {
             _swordTrail.enabled = false;
         }

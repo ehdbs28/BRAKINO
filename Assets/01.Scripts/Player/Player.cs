@@ -124,17 +124,19 @@ public class Player : Entity
         }
     }
 
-    public List<Entity> GetCanAttackAEntities()
+    public List<Entity> GetCanAttackAEntities(out List<Vector3> points)
     {
         var cols = new Collider[PlayerData.maxAttackCount];
         var result = new List<Entity>();
         var center = transform.position + CharacterControllerCompo.center + ModelTrm.forward * PlayerData.attackDistance;
         var count = Physics.OverlapSphereNonAlloc(center, PlayerData.attackRadius, cols, _enemyMask);
-        
+
+        points = new List<Vector3>();
         for (var i = 0; i < count; i++)
         {
             if (cols[i].TryGetComponent<Entity>(out var entity))
             {
+                points.Add(cols[i].ClosestPointOnBounds(center));
                 result.Add(entity);
             }
         }
