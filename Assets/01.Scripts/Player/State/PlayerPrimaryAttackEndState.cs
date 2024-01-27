@@ -20,8 +20,8 @@ public class PlayerPrimaryAttackEndState : PlayerBaseState
     {
         if (Time.time >= _attackEndTime + Player.PlayerData.comboWindowTime)
         {
-            Controller.ChangeState(typeof(PlayerIdleState));
             Player.PlayerAttackComboCounter = 0;
+            Controller.ChangeState(typeof(PlayerIdleState));
         }
     }
 
