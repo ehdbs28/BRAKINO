@@ -17,3 +17,5 @@ MonoBehaviour:
     cnt: 10
   - prefab: {fileID: -5395454424921047831, guid: 5501f9ed3ddad4e36b9bf7ade8d83781, type: 3}
     cnt: 10
+  - prefab: {fileID: -7586243513757979599, guid: eae6ae25fbf93490ea00caf9d3f61241, type: 3}
+    cnt: 10

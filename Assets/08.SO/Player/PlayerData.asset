@@ -19,15 +19,15 @@ MonoBehaviour:
   attackRadius: 1.25
   attackDistance: 1.5
   maxAttackCount: 5
-  comboWindowTime: 0.1
+  comboWindowTime: 0.25
   attackDelayTimes:
-  - 0.05
-  - 0.05
+  - 0.025
+  - 0.025
   - 0.1
   attackAdvances:
   - {x: 0, y: 0, z: 1.5}
   - {x: 0, y: 0, z: 1.5}
-  - {x: 0, y: 0, z: 2.5}
-  rollTime: 0.45
-  rollSpeed: 10
+  - {x: 0, y: 0, z: 2}
+  rollTime: 0.35
+  rollSpeed: 13
   shieldMovementSpeed: 1.5

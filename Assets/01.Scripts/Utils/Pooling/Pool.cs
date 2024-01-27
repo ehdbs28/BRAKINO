@@ -47,7 +47,7 @@ public class Pool
         else
         {
             var obj = Object.Instantiate(_prefab, _parent, true);
-            obj.gameObject.name = obj.gameObject.name.Replace("Clone", "");
+            obj.gameObject.name = obj.gameObject.name.Replace("(Clone)", "");
             obj.OnPop();
             return obj;
         }

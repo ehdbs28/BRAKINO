@@ -110,7 +110,7 @@ ModelImporter:
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
-      - time: 0.9001776
+      - time: 0.89104515
         functionName: AnimationTrigger
         data: 
         objectReferenceParameter: {instanceID: 0}

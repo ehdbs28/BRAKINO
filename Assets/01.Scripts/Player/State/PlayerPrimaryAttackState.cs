@@ -64,6 +64,7 @@ public class PlayerPrimaryAttackState : PlayerBaseState
     public override void ExitState()
     {
         base.ExitState();
+        _swordTrail.enabled = false;
         ++Player.PlayerAttackComboCounter;
         Player.InputReader.OnRollEvent -= RollHandle;
     }

@@ -1,7 +1,5 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
 public class StateController
 {
@@ -10,12 +8,9 @@ public class StateController
     public Entity Owner { get; private set; }
     public State CurrentState { get; private set; }
 
-    private Coroutine _runningRoutine;
-
     public StateController(Entity owner)
     {
         Owner = owner;
-        _runningRoutine = null;
         _states = new Dictionary<Type, State>();
     }
 
