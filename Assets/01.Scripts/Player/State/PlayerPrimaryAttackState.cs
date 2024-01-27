@@ -6,22 +6,30 @@ public class PlayerPrimaryAttackState : PlayerBaseState
     private Vector3 _attackDir;
 
     private float _triggerCalledTime;
+    private int _triggerCalledCount;
     
     private readonly int _comboCounterHash;
     private readonly LayerMask _groundMask;
-
+    private readonly TrailRenderer _swordTrail;
+    
     private Coroutine _runningRoutine;
 
     public PlayerPrimaryAttackState(StateController controller, string animationParameter) : base(controller, animationParameter)
     {
         _comboCounterHash = Animator.StringToHash("ComboCounter");
         _groundMask = LayerMask.GetMask("Ground");
+        _swordTrail = Player.ModelTrm
+            .Find("Mini Simple Skeleton Armature/Hips/Spine/Spine1/Spine2/RightShoulder/RightArm/RightForeArm/RightHand/RightHand_Dummy/SwordWood/SwordTrail")
+            .GetComponent<TrailRenderer>();
+        _swordTrail.enabled = false;
     }
 
     public override void EnterState()
     {
         base.EnterState();
+        _triggerCalledCount = 0;
         Player.OnlyUseBaseAnimatorLayer();
+        _swordTrail.enabled = false;
         
         Player.InputReader.OnRollEvent += RollHandle;
 
@@ -107,7 +115,20 @@ public class PlayerPrimaryAttackState : PlayerBaseState
 
     public override void AnimationTrigger()
     {
-        _triggerCalledTime = Time.time;
-        base.AnimationTrigger();
+        _triggerCalledCount++;
+
+        if (_triggerCalledCount == 1)
+        {
+            _swordTrail.enabled = true;
+        }
+        else if (_triggerCalledCount == 2)
+        {
+            _swordTrail.enabled = false;
+        }
+        else
+        {
+            _triggerCalledTime = Time.time;
+            base.AnimationTrigger();
+        }
     }
 }
