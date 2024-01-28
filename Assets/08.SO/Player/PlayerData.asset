@@ -31,3 +31,6 @@ MonoBehaviour:
   rollTime: 0.35
   rollSpeed: 13
   shieldMovementSpeed: 1.5
+  shieldKnockBackPower: 1
+  shieldCanBlockAngle: 120
+  shieldCanBlockDamage: 10

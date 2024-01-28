@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class Dummy : Entity
 {
     public override void Awake()
@@ -11,7 +13,7 @@ public class Dummy : Entity
         StateController.ChangeState(typeof(DummyIdleState));
     }
 
-    private void HitHandle()
+    private void HitHandle(Vector3 attackedDir)
     {
         StateController.ChangeState(typeof(DummyHitState));
     }

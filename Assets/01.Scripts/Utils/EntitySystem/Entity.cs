@@ -18,7 +18,7 @@ public class Entity : PoolableMono, IDamagable
     
     public bool IsDead { get; private set; }
 
-    public event Action OnHitEvent = null;
+    public event Action<Vector3> OnHitEvent = null;
 
     public virtual void Awake()
     {
@@ -61,10 +61,10 @@ public class Entity : PoolableMono, IDamagable
         StateController.CurrentState.AnimationTrigger();
     }
 
-    public void OnDamage(float damage)
+    public virtual void OnDamage(float damage, Vector3 attackedDir)
     {
         _currentHp -= damage;
-        OnHitEvent?.Invoke();
+        OnHitEvent?.Invoke(attackedDir);
         if (_currentHp <= 0)
         {
             OnDead();

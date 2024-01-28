@@ -75,7 +75,7 @@ public class PlayerPrimaryAttackState : PlayerBaseState
         for (var i = 0; i < entities.Count; i++)
         {
             AttackFeedback(points[i]);
-            entities[i].OnDamage(Player.PlayerData.damage);
+            entities[i].OnDamage(Player.PlayerData.damage, _attackDir);
         }
     }
 

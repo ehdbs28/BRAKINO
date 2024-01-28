@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class Player : Entity
 {
@@ -21,6 +22,14 @@ public class Player : Entity
     public bool OnShieldState { get; private set; }
 
     private Coroutine _runningRoutine;
+    
+    #region Gizmos Control Variable
+
+    [Space(10)] [Header("For Gizmos")]
+    [SerializeField] private bool _drawAttackRange;
+    [FormerlySerializedAs("_drawblockRange")] [SerializeField] private bool _drawBlockRange;
+    
+    #endregion
 
     public override void Awake()
     {
@@ -42,6 +51,27 @@ public class Player : Entity
         {
             RotateToMousePoint();
         }
+    }
+
+    public override void OnDamage(float damage, Vector3 attackedDir)
+    {
+        if (OnShieldState && damage < PlayerData.shieldCanBlockDamage && IsBlock(attackedDir))
+        {
+            // block
+            Debug.Log("Block!!");
+        }
+        else
+        {
+            base.OnDamage(damage, attackedDir);
+        }
+    }
+
+    private bool IsBlock(Vector3 attackDir)
+    {
+        var dot = Vector3.Dot(-attackDir, ModelTrm.forward);
+        var theta = Mathf.Acos(dot);
+        var degree = theta * Mathf.Rad2Deg;
+        return degree <= PlayerData.shieldCanBlockAngle / 2f;
     }
 
     public void Rotate(Quaternion targetRot, float speed = -1)
@@ -152,12 +182,25 @@ public class Player : Entity
         {
             return;
         }
-        
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(
-            transform.position + GetComponent<CharacterController>().center + transform.Find("Model").forward * PlayerData.attackDistance,
-            PlayerData.attackRadius
-        );
+
+        if (_drawAttackRange)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(
+                transform.position + GetComponent<CharacterController>().center +
+                transform.Find("Model").forward * PlayerData.attackDistance,
+                PlayerData.attackRadius
+            );
+        }
+
+        if (_drawBlockRange)
+        {
+            if (OnShieldState)
+            {
+                Gizmos.color = Color.yellow;
+                MoreGizmos.DrawWireArc(ModelTrm.position, ModelTrm.forward, PlayerData.shieldCanBlockAngle, 3f);
+            }
+        }
     }
 
 #endif
