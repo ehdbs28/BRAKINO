@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -8,6 +9,13 @@ public class Enemy : Entity
     public EnemyData EnemyData => (EnemyData)Data;
     
     public NavMeshAgent NavAgent { get; private set; }
+    
+    #region Gizmos Control Variable
+    #if UNITY_EDITOR
+    [Space(10)] [Header("For Gizmos")]
+    [SerializeField] private bool _drawSenseCircle;
+    #endif    
+    #endregion
 
     public override void Awake()
     {
@@ -23,4 +31,22 @@ public class Enemy : Entity
         StateController.RegisterState(new EnemyDieState(StateController, "Die"));
         StateController.ChangeState(typeof(EnemyIdleState));
     }
+    
+#if UNITY_EDITOR
+
+    private void OnDrawGizmos()
+    {
+        if (EnemyData is null)
+        {
+            return;
+        }
+
+        if (_drawSenseCircle)
+        {
+            Gizmos.color = Color.red;
+            MoreGizmos.DrawWireCircle(transform.position, EnemyData.senseRadius);
+        }
+    }
+
+#endif
 }

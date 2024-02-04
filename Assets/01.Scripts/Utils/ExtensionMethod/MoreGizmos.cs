@@ -30,6 +30,23 @@ public class MoreGizmos
         Gizmos.DrawLine(posA, initialPos);
     }
     
+    public static void DrawWireCircle(Vector3 position, float radius, float maxSteps = 20)
+    {
+        var initialPos = position;
+        var posA = initialPos;
+        var stepAngles = 360f / maxSteps;
+        var angle = 0f - 360f / 2;
+        for (var i = 0; i <= maxSteps; i++)
+        {
+            var rad = Mathf.Deg2Rad * angle;
+            var posB = initialPos;
+            posB += new Vector3(radius * Mathf.Cos(rad), 0, radius * Mathf.Sin(rad));
+            Gizmos.DrawLine(posA, posB);
+            angle += stepAngles;
+            posA = posB;
+        }
+    }
+    
     private static float GetAnglesFromDir(Vector3 position, Vector3 dir)
     {
         var forwardLimitPos = position + dir;

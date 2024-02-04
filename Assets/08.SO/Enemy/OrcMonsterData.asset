@@ -16,5 +16,7 @@ MonoBehaviour:
   movementSpeed: 5
   rotateSpeed: 0
   damage: 5
+  senseRadius: 5
+  senseDelay: 0
   attackRadius: 1
   attackDistance: 1

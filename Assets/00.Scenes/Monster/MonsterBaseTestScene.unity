@@ -1334,6 +1334,7 @@ MonoBehaviour:
   _enemyMask:
     serializedVersion: 2
     m_Bits: 1024
+  _drawSenseCircle: 1
 --- !u!143 &1429341311
 CharacterController:
   m_ObjectHideFlags: 0

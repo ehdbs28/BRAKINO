@@ -24,11 +24,11 @@ public class Player : Entity
     private Coroutine _runningRoutine;
     
     #region Gizmos Control Variable
-
+    #if UNITY_EDITOR
     [Space(10)] [Header("For Gizmos")]
     [SerializeField] private bool _drawAttackRange;
     [SerializeField] private bool _drawBlockRange;
-    
+    #endif    
     #endregion
 
     public override void Awake()
