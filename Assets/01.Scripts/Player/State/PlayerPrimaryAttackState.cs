@@ -7,7 +7,6 @@ public class PlayerPrimaryAttackState : PlayerBaseState
     private Vector3 _attackDir;
 
     private float _triggerCalledTime;
-    private int _triggerCalledCount;
     
     private readonly int _comboCounterHash;
     private readonly LayerMask _groundMask;
@@ -28,7 +27,6 @@ public class PlayerPrimaryAttackState : PlayerBaseState
     public override void EnterState()
     {
         base.EnterState();
-        _triggerCalledCount = 0;
         Player.OnlyUseBaseAnimatorLayer();
         _swordTrail.enabled = false;
         
@@ -122,26 +120,24 @@ public class PlayerPrimaryAttackState : PlayerBaseState
         }
     }
 
-    public override void AnimationTrigger()
+    public override void AnimationTrigger(string eventKey)
     {
-        _triggerCalledCount++;
-
-        if (_triggerCalledCount == 1)
+        if (eventKey == "TrailOn")
         {
             _swordTrail.enabled = true;
         }
-        else if (_triggerCalledCount == 2)
+        else if (eventKey == "Attack")
         {
             Attack();
         }
-        else if (_triggerCalledCount == 3)
+        else if (eventKey == "TrailOff")
         {
             _swordTrail.enabled = false;
         }
-        else
+        else if(eventKey == "AttackEnd")
         {
             _triggerCalledTime = Time.time;
-            base.AnimationTrigger();
+            base.AnimationTrigger(eventKey);
         }
     }
 }

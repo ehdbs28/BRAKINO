@@ -98,28 +98,28 @@ ModelImporter:
       events:
       - time: 0.39041105
         functionName: AnimationTrigger
-        data: 
+        data: TrailOn
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
       - time: 0.8796296
         functionName: AnimationTrigger
-        data: 
+        data: TrailOff
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
       - time: 1
         functionName: AnimationTrigger
-        data: 
+        data: AttackEnd
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
       - time: 0.52777785
         functionName: AnimationTrigger
-        data: 
+        data: Attack
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0

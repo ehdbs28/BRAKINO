@@ -29,7 +29,7 @@ public abstract class State
         Owner.AnimatorCompo.SetBool(_animationHash, false);
     }
 
-    public virtual void AnimationTrigger()
+    public virtual void AnimationTrigger(string eventKey)
     {
         _animationTriggerCalled = true;
     }

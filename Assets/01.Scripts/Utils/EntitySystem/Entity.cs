@@ -56,9 +56,9 @@ public class Entity : PoolableMono, IDamagable
         CharacterControllerCompo.Move(Vector3.zero);
     }
 
-    public void AnimationTrigger()
+    public void AnimationTrigger(string eventKey)
     {
-        StateController.CurrentState.AnimationTrigger();
+        StateController.CurrentState.AnimationTrigger(eventKey);
     }
 
     public virtual void OnDamage(float damage, Vector3 attackedDir)
