@@ -1062,7 +1062,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400030, guid: 2786d8a307dc4b6ba4e1821345ed9bd5, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400030, guid: 2786d8a307dc4b6ba4e1821345ed9bd5, type: 3}
       propertyPath: m_LocalRotation.x
@@ -1070,7 +1070,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400030, guid: 2786d8a307dc4b6ba4e1821345ed9bd5, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400030, guid: 2786d8a307dc4b6ba4e1821345ed9bd5, type: 3}
       propertyPath: m_LocalRotation.z
@@ -1082,7 +1082,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400030, guid: 2786d8a307dc4b6ba4e1821345ed9bd5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 180
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400030, guid: 2786d8a307dc4b6ba4e1821345ed9bd5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -1260,6 +1260,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1429341309}
+  - component: {fileID: 1429341311}
+  - component: {fileID: 1429341310}
   m_Layer: 0
   m_Name: OrcMonster
   m_TagString: Untagged
@@ -1283,6 +1285,48 @@ Transform:
   - {fileID: 1077990525}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1429341310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1429341308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0fcacff580d4078867c2a023f99e8e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _data: {fileID: 11400000, guid: c3b5cd67da6cf471d89f9e9c7aac67d7, type: 2}
+  _enemyMask:
+    serializedVersion: 2
+    m_Bits: 1024
+--- !u!143 &1429341311
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1429341308}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Height: 1.7
+  m_Radius: 0.7
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 1, z: 0.2}
 --- !u!1 &1686223901
 GameObject:
   m_ObjectHideFlags: 0

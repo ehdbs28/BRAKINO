@@ -27,7 +27,7 @@ public class Player : Entity
 
     [Space(10)] [Header("For Gizmos")]
     [SerializeField] private bool _drawAttackRange;
-    [FormerlySerializedAs("_drawblockRange")] [SerializeField] private bool _drawBlockRange;
+    [SerializeField] private bool _drawBlockRange;
     
     #endregion
 

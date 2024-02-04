@@ -5,17 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="923e8a7d-99e1-4206-8e1e-dafb90dc1fe1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/01.Scripts/Enemy/SO.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/01.Scripts/Enemy/SO/EnemyData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/01.Scripts/Enemy/SO/EnemyData.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/01.Scripts/Enemy/State.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/01.Scripts/Enemy/State/EnemyIdleState.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/01.Scripts/Enemy/State/EnemyIdleState.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/01.Scripts/Enemy/State/EnemyMovementState.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/01.Scripts/Enemy/State/EnemyMovementState.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/01.Scripts/Utils/AStarPathfinding.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/01.Scripts/Enemy/State/EnemyBaseState.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BRAKINO/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BRAKINO/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/01.Scripts/Enemy/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scripts/Enemy/Enemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/01.Scripts/Enemy/SO/EnemyData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scripts/Enemy/SO/EnemyData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/01.Scripts/Enemy/State/EnemyChaseState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scripts/Enemy/State/EnemyChaseState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/01.Scripts/Enemy/State/EnemyDieState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scripts/Enemy/State/EnemyDieState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/01.Scripts/Enemy/State/EnemyDizzyState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scripts/Enemy/State/EnemyDizzyState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/01.Scripts/Enemy/State/EnemyHitState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scripts/Enemy/State/EnemyHitState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/01.Scripts/Enemy/State/EnemyIdleState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scripts/Enemy/State/EnemyIdleState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/01.Scripts/Enemy/State/EnemyPrimaryAttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scripts/Enemy/State/EnemyPrimaryAttackState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/01.Scripts/Enemy/State/EnemySenseSomethingState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scripts/Enemy/State/EnemyBaseState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/01.Scripts/Enemy/State/EnemySenseSomethingState.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/01.Scripts/Player/Player.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scripts/Player/Player.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,6 +135,8 @@
       <workItem from="1706381544935" duration="124000" />
       <workItem from="1706437359105" duration="3900000" />
       <workItem from="1706528303091" duration="825000" />
+      <workItem from="1706720277946" duration="258000" />
+      <workItem from="1707039343404" duration="1277000" />
     </task>
     <servers />
   </component>

@@ -1,4 +1,4 @@
-public class EnemyIdleState : State
+public class EnemyIdleState : EnemyBaseState
 {
     public EnemyIdleState(StateController controller, string animationParameter) : base(controller, animationParameter)
     {

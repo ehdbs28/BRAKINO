@@ -1,6 +1,10 @@
-namespace _01.Scripts.Enemy.State
+public class EnemyDieState : EnemyBaseState
 {
-    public class EnemyDieState
+    public EnemyDieState(StateController controller, string animationParameter) : base(controller, animationParameter)
+    {
+    }
+
+    public override void UpdateState()
     {
         
     }
