@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: OrcMonsterData
   m_EditorClassIdentifier: 
   maxHp: 10
-  movementSpeed: 5
-  rotateSpeed: 0
+  movementSpeed: 0.5
+  rotateSpeed: 0.1
   damage: 5
+  maxSenseCnt: 1
   senseRadius: 5
-  senseDelay: 0
+  senseDelay: 0.5
   attackRadius: 1
-  attackDistance: 1
+  attackDistance: 1.5
+  maxAttackCnt: 1

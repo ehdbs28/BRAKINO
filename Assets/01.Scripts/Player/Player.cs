@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class Player : Entity
 {
@@ -72,11 +71,6 @@ public class Player : Entity
         var theta = Mathf.Acos(dot);
         var degree = theta * Mathf.Rad2Deg;
         return degree <= PlayerData.shieldCanBlockAngle / 2f;
-    }
-
-    public void Rotate(Quaternion targetRot, float speed = -1)
-    {
-        ModelTrm.rotation = Quaternion.Lerp(ModelTrm.rotation, targetRot, speed < 0 ? Data.rotateSpeed : speed);
     }
 
     public void ActivateShield(bool active)
@@ -154,7 +148,7 @@ public class Player : Entity
         }
     }
 
-    public List<Entity> GetCanAttackAEntities(out List<Vector3> points)
+    public List<Entity> GetCanAttackEntities(out List<Vector3> points)
     {
         var cols = new Collider[PlayerData.maxAttackCount];
         var result = new List<Entity>();

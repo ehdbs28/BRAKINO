@@ -69,7 +69,7 @@ public class PlayerPrimaryAttackState : PlayerBaseState
 
     private void Attack()
     {
-        var entities = Player.GetCanAttackAEntities(out var points);
+        var entities = Player.GetCanAttackEntities(out var points);
         for (var i = 0; i < entities.Count; i++)
         {
             AttackFeedback(points[i]);

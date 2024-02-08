@@ -46,12 +46,17 @@ public class Entity : PoolableMono, IDamagable
         OnHitEvent = null;
     }
 
-    public void Move(Vector3 velocity)
+    public virtual void Move(Vector3 velocity)
     {
         CharacterControllerCompo.Move(velocity * Time.deltaTime);
     }
+    
+    public void Rotate(Quaternion targetRot, float speed = -1)
+    {
+        ModelTrm.rotation = Quaternion.Lerp(ModelTrm.rotation, targetRot, speed < 0 ? Data.rotateSpeed : speed);
+    }
 
-    public void StopImmediately()
+    public virtual void StopImmediately()
     {
         CharacterControllerCompo.Move(Vector3.zero);
     }
