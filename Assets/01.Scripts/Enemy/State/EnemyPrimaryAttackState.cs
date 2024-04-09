@@ -10,6 +10,9 @@ public class EnemyPrimaryAttackState : EnemyBaseState
     {
         base.EnterState();
         Enemy.StopImmediately();
+        
+        var dir = (Enemy.targetTransform.position - Enemy.transform.position).normalized;
+        Enemy.Rotate(Quaternion.LookRotation(dir), 1);
     }
 
     public override void UpdateState()
@@ -18,6 +21,12 @@ public class EnemyPrimaryAttackState : EnemyBaseState
         {
             Controller.ChangeState(typeof(EnemyBattleIdleState));
         }
+    }
+
+    public override void ExitState()
+    {
+        base.ExitState();
+        Enemy.lastAttackTime = Time.time;
     }
 
     private void Attack()

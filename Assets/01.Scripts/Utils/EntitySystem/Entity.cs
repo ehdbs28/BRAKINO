@@ -15,6 +15,8 @@ public class Entity : PoolableMono, IDamagable
     protected StateController StateController { get; private set; }
 
     private float _currentHp;
+
+    public float lastAttackTime;
     
     public bool IsDead { get; private set; }
 
@@ -51,14 +53,14 @@ public class Entity : PoolableMono, IDamagable
         CharacterControllerCompo.Move(velocity * Time.deltaTime);
     }
     
-    public void Rotate(Quaternion targetRot, float speed = -1)
-    {
-        ModelTrm.rotation = Quaternion.Lerp(ModelTrm.rotation, targetRot, speed < 0 ? Data.rotateSpeed : speed);
-    }
-
     public virtual void StopImmediately()
     {
         CharacterControllerCompo.Move(Vector3.zero);
+    }
+    
+    public void Rotate(Quaternion targetRot, float speed = -1)
+    {
+        ModelTrm.rotation = Quaternion.Lerp(ModelTrm.rotation, targetRot, speed < 0 ? Data.rotateSpeed : speed);
     }
 
     public void AnimationTrigger(string eventKey)
