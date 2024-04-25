@@ -20,5 +20,6 @@ MonoBehaviour:
   senseRadius: 5
   senseDelay: 0.5
   attackRadius: 1
+  attackDelay: 2
   attackDistance: 1.5
   maxAttackCnt: 1

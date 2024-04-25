@@ -10,6 +10,7 @@ public class EnemyData : EntityData
 
     [Header("Enemy Attack Data")] 
     public float attackRadius;
+    public float attackDelay;
     public float attackDistance;
     public int maxAttackCnt;
 }

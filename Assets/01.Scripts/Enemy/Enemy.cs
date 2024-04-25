@@ -8,7 +8,7 @@ public class Enemy : Entity
 
     public EnemyData EnemyData => (EnemyData)Data;
 
-    public Player targetPlayer;
+    public Transform targetTransform;
     public NavMeshAgent NavAgent { get; private set; }
     
     #region Gizmos Control Variable
@@ -23,7 +23,7 @@ public class Enemy : Entity
     {
         base.Awake();
 
-        targetPlayer = null;
+        targetTransform = null;
         NavAgent = GetComponent<NavMeshAgent>();
         NavAgent.speed = EnemyData.movementSpeed;
         
@@ -60,7 +60,7 @@ public class Enemy : Entity
 
         if (count > 0)
         {
-            targetPlayer = cols[0].GetComponent<Player>();
+            targetTransform = cols[0].transform;
         }
         return count > 0;
     }

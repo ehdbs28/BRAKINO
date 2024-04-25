@@ -16,11 +16,14 @@ public class EnemyChaseState : EnemyBaseState
         
         if (Enemy.Sense(Enemy.EnemyData.attackRadius + Enemy.EnemyData.attackDistance))
         {
-            Controller.ChangeState(typeof(EnemyPrimaryAttackState));
+            if (Time.time >= Enemy.lastAttackTime + Enemy.EnemyData.attackDelay)
+            {
+                Controller.ChangeState(typeof(EnemyPrimaryAttackState));
+            }
             return;
         }
 
-        var dir = (Enemy.targetPlayer.transform.position - Enemy.transform.position).normalized;
+        var dir = (Enemy.targetTransform.position - Enemy.transform.position).normalized;
         Enemy.Rotate(Quaternion.LookRotation(dir));
         Enemy.Move(dir);
     }
