@@ -1397,10 +1397,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _data: {fileID: 11400000, guid: c3b5cd67da6cf471d89f9e9c7aac67d7, type: 2}
+  lastAttackTime: 0
   _playerMask:
     serializedVersion: 2
     m_Bits: 1024
-  targetPlayer: {fileID: 0}
+  targetTransform: {fileID: 0}
   _drawSenseCircle: 1
   _drawAttackRange: 1
 --- !u!143 &1429341311

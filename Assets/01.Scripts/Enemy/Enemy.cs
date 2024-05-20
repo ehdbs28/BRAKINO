@@ -23,6 +23,8 @@ public class Enemy : Entity
     {
         base.Awake();
 
+        OnHitEvent += HitHandle;
+
         targetTransform = null;
         NavAgent = GetComponent<NavMeshAgent>();
         NavAgent.speed = EnemyData.movementSpeed;
@@ -50,6 +52,17 @@ public class Enemy : Entity
     {
         NavAgent.isStopped = true;
         NavAgent.SetDestination(transform.position);
+    }
+
+    private void HitHandle(Vector3 attackDir)
+    {
+        StateController.ChangeState(typeof(EnemyHitState));
+    }
+
+    protected override void OnDead()
+    {
+        base.OnDead();
+        StateController.ChangeState(typeof(EnemyDieState));
     }
 
     public bool Sense(float senseRadius)

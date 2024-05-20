@@ -70,6 +70,11 @@ public class Entity : PoolableMono, IDamagable
 
     public virtual void OnDamage(float damage, Vector3 attackedDir)
     {
+        if (IsDead)
+        {
+            return;
+        }
+        
         _currentHp -= damage;
         OnHitEvent?.Invoke(attackedDir);
         if (_currentHp <= 0)

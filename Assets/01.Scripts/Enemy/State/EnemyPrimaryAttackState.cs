@@ -9,6 +9,7 @@ public class EnemyPrimaryAttackState : EnemyBaseState
     public override void EnterState()
     {
         base.EnterState();
+
         Enemy.StopImmediately();
         
         var dir = (Enemy.targetTransform.position - Enemy.transform.position).normalized;
@@ -21,12 +22,6 @@ public class EnemyPrimaryAttackState : EnemyBaseState
         {
             Controller.ChangeState(typeof(EnemyBattleIdleState));
         }
-    }
-
-    public override void ExitState()
-    {
-        base.ExitState();
-        Enemy.lastAttackTime = Time.time;
     }
 
     private void Attack()
@@ -51,6 +46,7 @@ public class EnemyPrimaryAttackState : EnemyBaseState
         else if(eventKey == "AttackEnd")
         {
             // _triggerCalledTime = Time.time;
+            Enemy.lastAttackTime = Time.time;
             base.AnimationTrigger(eventKey);
         }
     }

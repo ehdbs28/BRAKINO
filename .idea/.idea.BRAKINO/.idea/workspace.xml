@@ -6,12 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="923e8a7d-99e1-4206-8e1e-dafb90dc1fe1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.BRAKINO/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.BRAKINO/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/00.Scenes/Monster/MonsterBaseTestScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/00.Scenes/Monster/MonsterBaseTestScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/01.Scripts/Enemy/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scripts/Enemy/Enemy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01.Scripts/Enemy/SO/EnemyData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scripts/Enemy/SO/EnemyData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/01.Scripts/Enemy/State/EnemyChaseState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scripts/Enemy/State/EnemyChaseState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/01.Scripts/Enemy/State/EnemyPrimaryAttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scripts/Enemy/State/EnemyPrimaryAttackState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/01.Scripts/Utils/EntitySystem/Entity.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/01.Scripts/Utils/EntitySystem/Entity.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/08.SO/Enemy/OrcMonsterData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/08.SO/Enemy/OrcMonsterData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/05.Animations/Enemy/Controller/EnemyBaseController.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/05.Animations/Enemy/Controller/EnemyBaseController.controller" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +19,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="5" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/dd8d4b498aba4a759da933af8b6fa0af27800/0b/9718b227/Animator.cs" root0="SKIP_HIGHLIGHTING" />
@@ -137,6 +139,8 @@
       <workItem from="1707402538732" duration="700000" />
       <workItem from="1707464692611" duration="1170000" />
       <workItem from="1707486593849" duration="1282000" />
+      <workItem from="1714138451161" duration="712000" />
+      <workItem from="1716196544084" duration="2827000" />
     </task>
     <servers />
   </component>
