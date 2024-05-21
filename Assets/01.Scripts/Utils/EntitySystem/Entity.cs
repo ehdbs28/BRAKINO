@@ -79,7 +79,7 @@ public class Entity : PoolableMono, IDamagable
         OnHitEvent?.Invoke(attackedDir);
         if (_currentHp <= 0)
         {
-            OnDead();
+            // OnDead();
         }
     }
 

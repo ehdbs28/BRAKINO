@@ -7,7 +7,7 @@ public class DummyHitState : State
     public override void EnterState()
     {
         base.EnterState();
-        Owner.AnimatorCompo.Play("Hit", -1, 0);
+        Owner.AnimatorCompo.Play(AnimationHash, -1, 0);
     }
 
     public override void UpdateState()

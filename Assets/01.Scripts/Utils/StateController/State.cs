@@ -7,30 +7,35 @@ public abstract class State
 
     protected bool _animationTriggerCalled;
 
-    private readonly int _animationHash;
+    protected readonly int AnimationHash;
     
     public State(StateController controller, string animationParameter)
     {
         Controller = controller;
         Owner = Controller.Owner;
-        _animationHash = Animator.StringToHash(animationParameter);
+        AnimationHash = Animator.StringToHash(animationParameter);
     }
 
     public virtual void EnterState()
     {
         _animationTriggerCalled = false;
-        Owner.AnimatorCompo.SetBool(_animationHash, true);
+        AnimationSetting(true);
     }
     
     public abstract void UpdateState();
 
     public virtual void ExitState()
     {
-        Owner.AnimatorCompo.SetBool(_animationHash, false);
+        AnimationSetting(false);
     }
 
     public virtual void AnimationTrigger(string eventKey)
     {
         _animationTriggerCalled = true;
+    }
+
+    private void AnimationSetting(bool value)
+    {
+        Owner.AnimatorCompo.SetBool(AnimationHash, value);
     }
 }
