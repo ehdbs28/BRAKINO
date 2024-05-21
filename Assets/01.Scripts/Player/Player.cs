@@ -148,20 +148,20 @@ public class Player : Entity
         }
     }
 
-    public List<Entity> GetCanAttackEntities(out List<Vector3> points)
+    public List<IDamageable> GetDamageableObjects(out List<Vector3> points)
     {
         var cols = new Collider[PlayerData.maxAttackCount];
-        var result = new List<Entity>();
+        var result = new List<IDamageable>();
         var center = transform.position + CharacterControllerCompo.center + ModelTrm.forward * PlayerData.attackDistance;
         var count = Physics.OverlapSphereNonAlloc(center, PlayerData.attackRadius, cols, _enemyMask);
 
         points = new List<Vector3>();
         for (var i = 0; i < count; i++)
         {
-            if (cols[i].TryGetComponent<Entity>(out var entity))
+            if (cols[i].TryGetComponent<IDamageable>(out var damageable))
             {
                 points.Add(cols[i].ClosestPointOnBounds(center));
-                result.Add(entity);
+                result.Add(damageable);
             }
         }
 

@@ -69,11 +69,16 @@ public class PlayerPrimaryAttackState : PlayerBaseState
 
     private void Attack()
     {
-        var entities = Player.GetCanAttackEntities(out var points);
-        for (var i = 0; i < entities.Count; i++)
+        var damageableObjects = Player.GetDamageableObjects(out var points);
+        for (var i = 0; i < damageableObjects.Count; i++)
         {
+            if (damageableObjects[i].IsDead())
+            {
+                continue;
+            }
+            
             AttackFeedback(points[i]);
-            entities[i].OnDamage(Player.PlayerData.damage, _attackDir);
+            damageableObjects[i].OnDamage(Player.PlayerData.damage, _attackDir);
         }
     }
 

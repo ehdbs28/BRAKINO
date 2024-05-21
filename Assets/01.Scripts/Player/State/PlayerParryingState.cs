@@ -12,6 +12,7 @@ public class PlayerParryingState : PlayerBaseState
 
         Player.OnlyUseBaseAnimatorLayer();
         Player.InputReader.OnRollEvent += RollHandle;
+        Player.InputReader.OnShieldEvent += Player.ActivateShield;
     }
 
     public override void UpdateState()
@@ -26,5 +27,6 @@ public class PlayerParryingState : PlayerBaseState
     {
         base.ExitState();
         Player.InputReader.OnRollEvent -= RollHandle;
+        Player.InputReader.OnShieldEvent -= Player.ActivateShield;
     }
 }

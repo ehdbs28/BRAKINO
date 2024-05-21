@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
-public class Entity : PoolableMono, IDamagable
+public class Entity : PoolableMono, IDamageable
 {
     [SerializeField] private EntityData _data;
     public EntityData Data => _data;
@@ -79,12 +79,17 @@ public class Entity : PoolableMono, IDamagable
         OnHitEvent?.Invoke(attackedDir);
         if (_currentHp <= 0)
         {
-            // OnDead();
+            OnDead();
         }
     }
-
+    
     protected virtual void OnDead()
     {
         IsDead = true;
+    }
+    
+    bool IDamageable.IsDead()
+    {
+        return IsDead;
     }
 }
